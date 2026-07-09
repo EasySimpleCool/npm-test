@@ -1,6 +1,6 @@
 {
   "name": "@easysimplecool/design-system",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A basic design system package for use in production apps and Figma Make.",
   "type": "module",
   "main": "dist/index.js",
@@ -22,7 +22,7 @@
     "url": "https://github.com/EasySimpleCool/npm-test.git"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "npm run build:tokens && vite build",
     "build:tokens": "style-dictionary build --config style-dictionary.config.js",
     "dev": "vite build --watch",
     "typecheck": "tsc --noEmit"

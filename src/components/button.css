@@ -1,7 +1,7 @@
 .ds-btn {
-  font-family: 'Inter', -apple-system, sans-serif;
-  font-weight: 500;
-  border-radius: 8px;
+  font-family: var(--ds-font-family);
+  font-weight: var(--ds-font-weight-medium);
+  border-radius: var(--ds-radius-md);
   border: 1px solid transparent;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease;
@@ -13,32 +13,46 @@
 }
 
 /* sizes */
-.ds-btn--sm { padding: 6px 12px; font-size: 14px; }
-.ds-btn--md { padding: 10px 16px; font-size: 16px; }
-.ds-btn--lg { padding: 12px 20px; font-size: 18px; }
+.ds-btn--sm {
+  padding: var(--ds-spacing-xs) var(--ds-spacing-sm);
+  font-size: var(--ds-font-size-sm);
+}
+
+.ds-btn--md {
+  padding: var(--ds-spacing-sm) var(--ds-spacing-md);
+  font-size: var(--ds-font-size-md);
+}
+
+.ds-btn--lg {
+  padding: var(--ds-spacing-sm) var(--ds-spacing-lg);
+  font-size: var(--ds-font-size-lg);
+}
 
 /* variants */
 .ds-btn--primary {
-  background-color: #4F46E5;
-  color: #FFFFFF;
+  background-color: var(--ds-color-primary);
+  color: var(--ds-color-background);
 }
+
 .ds-btn--primary:not(:disabled):hover {
-  background-color: #4338CA;
+  background-color: var(--ds-color-primary-hover);
 }
 
 .ds-btn--secondary {
-  background-color: #F3F4F6;
-  color: #111827;
-  border-color: #D1D5DB;
+  background-color: var(--ds-color-secondary);
+  color: var(--ds-color-text);
+  border-color: var(--ds-color-border);
 }
+
 .ds-btn--secondary:not(:disabled):hover {
-  background-color: #E5E7EB;
+  background-color: var(--ds-color-secondary-hover);
 }
 
 .ds-btn--danger {
-  background-color: #DC2626;
-  color: #FFFFFF;
+  background-color: var(--ds-color-danger);
+  color: var(--ds-color-background);
 }
+
 .ds-btn--danger:not(:disabled):hover {
-  background-color: #B91C1C;
+  filter: brightness(0.9);
 }
