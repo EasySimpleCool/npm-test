@@ -1,0 +1,39 @@
+.ds-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.ds-field__label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.ds-field__input {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.ds-field__input:focus {
+  border-color: #4F46E5;
+}
+
+.ds-field__input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ds-field__input--error {
+  border-color: #DC2626;
+}
+
+.ds-field__error {
+  font-size: 13px;
+  color: #DC2626;
+}
