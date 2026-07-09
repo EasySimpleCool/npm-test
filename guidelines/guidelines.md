@@ -1,18 +1,18 @@
 # Design System Guidelines (Make Kit)
 
-This project uses `@npm-test/design-system`. Follow these rules exactly —
+This project uses `@easysimplecool/design-system`. Follow these rules exactly —
 do not deviate even if it seems like a small convenience.
 
 ## Core rule
 
-Always prefer a component from `@npm-test/design-system` over a raw HTML
+Always prefer a component from `@easysimplecool/design-system` over a raw HTML
 element or a custom-built equivalent. If a component exists for the job,
 use it. Do not invent a new one.
 
 ## Components
 
 ### Button
-- Import: `import { Button } from '@npm-test/design-system'`
+- Import: `import { Button } from '@easysimplecool/design-system'`
 - Use `variant="primary"` for the single main action on a screen.
 - Use `variant="secondary"` for supporting/alternate actions.
 - Use `variant="danger"` only for destructive actions (delete, remove,
@@ -21,7 +21,7 @@ use it. Do not invent a new one.
   extra classes — use `size` and `variant` props only.
 
 ### Input
-- Import: `import { Input } from '@npm-test/design-system'`
+- Import: `import { Input } from '@easysimplecool/design-system'`
 - Always pass a `label` unless the field's purpose is unambiguous from
   layout (e.g. a single search bar).
 - Use the `error` prop for validation messages. Do not build a separate
@@ -29,7 +29,7 @@ use it. Do not invent a new one.
 
 ## Tokens
 
-- Import from `@npm-test/design-system`: `colors`, `spacing`, `typography`,
+- Import from `@easysimplecool/design-system`: `colors`, `spacing`, `typography`,
   `radii`.
 - Do not hardcode hex colors, px spacing, or font sizes anywhere in the
   app. Reference the token instead (e.g. `colors.primary`, not `#4F46E5`).
@@ -39,7 +39,7 @@ use it. Do not invent a new one.
 ## General
 
 - If unsure whether a component or token exists, check
-  `node_modules/@npm-test/design-system/dist/index.d.ts` for the full
+  `node_modules/@easysimplecool/design-system/dist/index.d.ts` for the full
   exported API before writing custom code.
 - Keep all new UI consistent with the existing Button/Input styling
   (rounded corners, Inter font, the spacing scale above) even when

@@ -1,5 +1,5 @@
 {
-  "name": "@npm-test/design-system",
+  "name": "@easysimplecool/design-system",
   "version": "0.1.0",
   "description": "A basic design system package for use in production apps and Figma Make.",
   "type": "module",

@@ -1,4 +1,4 @@
-# @npm-test/design-system
+# @easysimplecool/design-system
 
 A minimal design system package (Button, Input, tokens) set up to build,
 publish, and use inside Figma Make via a Make kit.
@@ -51,7 +51,7 @@ scope in Figma's private npm registry first):
 
 1. Open Figma Make, create or open a file.
 2. Go through **Get started with Make kits** and add this package by name
-   (`@npm-test/design-system`).
+   (`@easysimplecool/design-system`).
 3. Attach the `guidelines/guidelines.md` file from this repo — Figma Make
    reads it to learn your conventions (when to use which variant, which
    tokens to reference, etc.).
