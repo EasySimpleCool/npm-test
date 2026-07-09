@@ -3,8 +3,8 @@
    Regenerate with: npm run build:tokens */
 
 :root {
-  --ds-color-primary: #4be647;
-  --ds-color-primary-hover: #38c96a;
+  --ds-color-primary: #c647e6;
+  --ds-color-primary-hover: #b827c4;
   --ds-color-secondary: #f3f4f6;
   --ds-color-secondary-hover: #e5e7eb;
   --ds-color-text: #111827;
