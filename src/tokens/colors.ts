@@ -3,8 +3,8 @@
 // Regenerate with: npm run build:tokens
 
 export const colors = {
-  primary: '#4f46e5',
-  primaryHover: '#4338ca',
+  primary: '#4be647',
+  primaryHover: '#38c96a',
   secondary: '#f3f4f6',
   secondaryHover: '#e5e7eb',
   text: '#111827',
