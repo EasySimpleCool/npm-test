@@ -3,16 +3,28 @@
 // Regenerate with: npm run build:tokens
 
 export const colors = {
-  primary: '#47e662',
-  primaryOn: '#ffffff',
-  primaryHover: '#194f13',
-  secondary: '#f3f4f6',
-  secondaryHover: '#e5e7eb',
-  text: '#111827',
-  textMuted: '#6b7280',
-  border: '#d1d5db',
-  danger: '#dc2626',
-  background: '#ffffff',
+  ink: '#191512',
+  white: '#ffffff',
+  surfacePrimary: '#fffdf9',
+  surfaceSecondary: '#f7f3ec',
+  surfaceTertiary: '#ece5d8',
+  accentTeal: '#2f9b91',
+  accentGold: '#d3a044',
+  accentTerracotta: '#c25538',
+  accentPurple: '#8668bd',
+  accentGreen: '#7aab54',
+  textPrimary: '#191512',
+  textBody: 'rgba(25, 21, 18, 0.82)',
+  textMuted: 'rgba(25, 21, 18, 0.65)',
+  textSubtle: 'rgba(25, 21, 18, 0.5)',
+  textOnDark: '#ffffff',
+  textOnDarkMuted: 'rgba(255, 255, 255, 0.85)',
+  textOnDarkSubtle: 'rgba(255, 255, 255, 0.6)',
+  borderStrong: 'rgba(25, 21, 18, 0.35)',
+  borderDefault: 'rgba(25, 21, 18, 0.25)',
+  borderSubtle: 'rgba(25, 21, 18, 0.14)',
+  overlayDark: 'rgba(0, 0, 0, 0.65)',
+  overlayScrim: 'rgba(0, 0, 0, 0.55)',
 } as const;
 
 export const spacing = {
@@ -21,15 +33,26 @@ export const spacing = {
   md: '16px',
   lg: '24px',
   xl: '32px',
+  2xl: '48px',
+  3xl: '64px',
+  4xl: '96px',
 } as const;
 
 export const typography = {
-  fontFamily: `'Inter', -apple-system, sans-serif`,
+  fontFamily: `''Space Grotesk'', -apple-system, sans-serif`,
   sizes: {
-    sm: '14px',
-    md: '16px',
-    lg: '20px',
-    xl: '28px',
+    displayHero: '168px',
+    displayXl: '118px',
+    displayLg: '100px',
+    displayMd: '72px',
+    displaySm: '44px',
+    bodyLg: '18px',
+    bodyMd: '16px',
+    bodySm: '13px',
+    bodyCaption: '12px',
+    monoMd: '12px',
+    monoSm: '11px',
+    monoXs: '9px',
   },
   weights: {
     regular: 400,
@@ -39,8 +62,9 @@ export const typography = {
 } as const;
 
 export const radii = {
-  sm: '4px',
-  md: '8px',
-  lg: '12px',
-  full: '9999px',
+  pill: '28px',
+  pillSm: '16px',
+  input: '14px',
+  overlay: '6px',
+  card: '12px',
 } as const;
