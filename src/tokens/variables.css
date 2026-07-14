@@ -100,11 +100,11 @@
   --ds-comp-button-primary-color-bg: #db0081;
   --ds-comp-button-primary-color-bg-hover: #ad005f;
   --ds-comp-button-primary-radius: 28px;
-  --ds-comp-button-secondary-color-fg: #191512;
-  --ds-comp-button-secondary-color-bg: rgba(247, 243, 236, 0.75);
-  --ds-comp-button-secondary-color-bg-hover: rgba(247, 243, 236, 0.95);
+  --ds-comp-button-secondary-color-fg: #db0081;
+  --ds-comp-button-secondary-color-bg: rgba(255, 255, 255, 0);
+  --ds-comp-button-secondary-color-bg-hover: #ad005f;
   --ds-comp-button-secondary-radius: 28px;
-  --ds-comp-button-secondary-border: rgba(25, 21, 18, 0.35);
+  --ds-comp-button-secondary-border: #db0081;
   --ds-comp-button-ghost-color-fg: #191512;
   --ds-comp-button-ghost-color-bg: rgba(0, 0, 0, 0);
   --ds-comp-button-ghost-color-bg-hover: rgba(25, 21, 18, 0.05);

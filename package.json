@@ -1,6 +1,6 @@
 {
   "name": "@easysimplecool/design-system",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "description": "A basic design system package for use in production apps and Figma Make.",
   "type": "module",
   "main": "dist/index.js",
