@@ -37,6 +37,13 @@
   text-transform: uppercase;
 }
 
+.ds-text-display-xs {
+  font-family: var(--ds-font-display);
+  font-size: var(--ds-font-size-display-xs);
+  line-height: var(--ds-line-height-display);
+  text-transform: uppercase;
+}
+
 .ds-text-body-lg {
   font-family: var(--ds-font-body);
   font-size: var(--ds-font-size-body-lg);
