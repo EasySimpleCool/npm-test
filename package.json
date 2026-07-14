@@ -24,6 +24,7 @@
   "scripts": {
     "build": "npm run build:tokens && vite build",
     "build:tokens": "style-dictionary build --config style-dictionary.config.js",
+    "validate:tokens": "node scripts/validate-tokens.mjs",
     "dev": "vite build --watch",
     "typecheck": "tsc --noEmit"
   },

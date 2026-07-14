@@ -36,6 +36,37 @@ function unwrapDuplicateSetKeys(setContent, setName) {
   return unwrapped;
 }
 
+function syncMetadata(tokens) {
+  const actualSets = Object.keys(tokens).filter((key) => !RESERVED_KEYS.has(key));
+  const declaredOrder = tokens.$metadata?.tokenSetOrder ?? [];
+
+  const ghostSets = declaredOrder.filter((setName) => !actualSets.includes(setName));
+  const undeclaredSets = actualSets.filter((setName) => !declaredOrder.includes(setName));
+
+  if (ghostSets.length > 0) {
+    console.warn(
+      `[tokens] $metadata.tokenSetOrder lists sets missing from tokens.json — delete these in Tokens Studio: ${ghostSets.join(', ')}`,
+    );
+  }
+
+  if (undeclaredSets.length > 0) {
+    console.warn(
+      `[tokens] Token sets exist but are missing from $metadata.tokenSetOrder — drag to reorder in Tokens Studio: ${undeclaredSets.join(', ')}`,
+    );
+  }
+
+  const reconciledOrder = [
+    ...(actualSets.includes('global') ? ['global'] : []),
+    ...declaredOrder.filter((setName) => setName !== 'global' && actualSets.includes(setName)),
+    ...undeclaredSets,
+  ];
+
+  return {
+    ...tokens.$metadata,
+    tokenSetOrder: reconciledOrder.length > 0 ? reconciledOrder : actualSets,
+  };
+}
+
 function normalizeTokenSets(tokens) {
   const normalized = { ...tokens };
 
@@ -43,6 +74,8 @@ function normalizeTokenSets(tokens) {
     if (RESERVED_KEYS.has(setName)) continue;
     normalized[setName] = unwrapDuplicateSetKeys(setContent, setName);
   }
+
+  normalized.$metadata = syncMetadata(normalized);
 
   return normalized;
 }
