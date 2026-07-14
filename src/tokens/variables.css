@@ -31,7 +31,9 @@
   --ds-radius-lg: 12px;
   --ds-radius-full: 9999px;
   --ds-comp-button-primary-color-fg: #ffffff;
-  --ds-comp-button-primary-color-fg-hover: #ffffff;
   --ds-comp-button-primary-color-bg: #47e662;
   --ds-comp-button-primary-color-bg-hover: #194f13;
+  --ds-comp-button-secondary-color-fg: #ffffff;
+  --ds-comp-button-secondary-color-bg: #47e662;
+  --ds-comp-button-secondary-color-bg-hover: #194f13;
 }
