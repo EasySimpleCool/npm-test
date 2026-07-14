@@ -4,6 +4,7 @@
 
 export const colors = {
   primary: '#c647e6',
+  primaryOn: '#ffffff',
   primaryHover: '#b827c4',
   secondary: '#f3f4f6',
   secondaryHover: '#e5e7eb',

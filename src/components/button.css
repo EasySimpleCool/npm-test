@@ -30,12 +30,13 @@
 
 /* variants */
 .ds-btn--primary {
-  background-color: var(--ds-color-primary);
-  color: var(--ds-color-background);
+  background-color: var(--ds-comp-button-primary-color-bg);
+  color: var(--ds-comp-button-primary-color-fg);
 }
 
 .ds-btn--primary:not(:disabled):hover {
-  background-color: var(--ds-color-primary-hover);
+  background-color: var(--ds-comp-button-primary-color-bg-hover);
+  color: var(--ds-comp-button-primary-color-fg-hover);
 }
 
 .ds-btn--secondary {

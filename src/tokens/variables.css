@@ -4,6 +4,7 @@
 
 :root {
   --ds-color-primary: #c647e6;
+  --ds-color-primary-on: #ffffff;
   --ds-color-primary-hover: #b827c4;
   --ds-color-secondary: #f3f4f6;
   --ds-color-secondary-hover: #e5e7eb;
@@ -29,4 +30,8 @@
   --ds-radius-md: 8px;
   --ds-radius-lg: 12px;
   --ds-radius-full: 9999px;
+  --ds-comp-button-primary-color-fg: #ffffff;
+  --ds-comp-button-primary-color-fg-hover: #ffffff;
+  --ds-comp-button-primary-color-bg: #c647e6;
+  --ds-comp-button-primary-color-bg-hover: #b827c4;
 }

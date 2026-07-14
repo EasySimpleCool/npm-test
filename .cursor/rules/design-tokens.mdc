@@ -1,0 +1,31 @@
+---
+description: Do not hand-edit design tokens or token-generated output
+alwaysApply: true
+---
+
+# Design tokens — read-only for the agent
+
+Never modify token source files or files generated from them. Tokens flow from Figma via Tokens Studio; the build pipeline produces code output.
+
+## Do not edit
+
+- `src/tokens/tokens.json` — source of truth, synced from Figma/Tokens Studio
+- `src/tokens/variables.css` — auto-generated CSS custom properties
+- `src/tokens/colors.ts` — auto-generated TypeScript token exports
+
+These files include an `AUTO-GENERATED` banner. Treat them as read-only.
+
+## Do not edit component CSS to wire tokens
+
+Do not update files like `src/components/*.css` to reference new token variables. The user owns that wiring.
+
+## Allowed changes
+
+- `style-dictionary.config.js` — build pipeline / output format only
+- Running `npm run build:tokens` to regenerate output after the user syncs tokens from Figma
+
+## When tokens need to change
+
+1. User updates tokens in Figma and syncs via Tokens Studio → `tokens.json`
+2. Run `npm run build:tokens` to regenerate `variables.css` and `colors.ts`
+3. User wires component CSS to the new `--ds-comp-*` or `--ds-color-*` variables if needed
