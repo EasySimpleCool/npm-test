@@ -1,7 +1,54 @@
+import { readFileSync, writeFileSync } from 'fs';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 import StyleDictionary from 'style-dictionary';
 import { register } from '@tokens-studio/sd-transforms';
 
 register(StyleDictionary, { excludeParentKeys: true });
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const TOKENS_PATH = join(__dirname, 'src/tokens/tokens.json');
+const NORMALIZED_PATH = join(__dirname, 'src/tokens/.tokens.normalized.json');
+
+const RESERVED_KEYS = new Set(['$themes', '$metadata']);
+
+/**
+ * Tokens Studio can push a duplicate set-name group inside a token set
+ * (e.g. "comp/button": { "comp/button": { "comp": { "button": ... } } }).
+ * That produces invalid CSS vars with slashes. Hoist children when detected.
+ */
+function unwrapDuplicateSetKeys(setContent, setName) {
+  if (!setContent || typeof setContent !== 'object' || Array.isArray(setContent)) {
+    return setContent;
+  }
+
+  if (Object.prototype.hasOwnProperty.call(setContent, setName)) {
+    return unwrapDuplicateSetKeys(setContent[setName], setName);
+  }
+
+  const unwrapped = {};
+  for (const [key, value] of Object.entries(setContent)) {
+    unwrapped[key] =
+      value && typeof value === 'object' && !Array.isArray(value)
+        ? unwrapDuplicateSetKeys(value, setName)
+        : value;
+  }
+  return unwrapped;
+}
+
+function normalizeTokenSets(tokens) {
+  const normalized = { ...tokens };
+
+  for (const [setName, setContent] of Object.entries(tokens)) {
+    if (RESERVED_KEYS.has(setName)) continue;
+    normalized[setName] = unwrapDuplicateSetKeys(setContent, setName);
+  }
+
+  return normalized;
+}
+
+const tokens = normalizeTokenSets(JSON.parse(readFileSync(TOKENS_PATH, 'utf8')));
+writeFileSync(NORMALIZED_PATH, JSON.stringify(tokens, null, 2));
 
 function parseKey(key) {
   return key.replace(/^\{|\}$/g, '').split('.');
@@ -199,7 +246,7 @@ StyleDictionary.registerFormat({
 });
 
 export default {
-  source: ['src/tokens/tokens.json'],
+  source: [NORMALIZED_PATH],
   preprocessors: ['tokens-studio'],
   platforms: {
     typescript: {

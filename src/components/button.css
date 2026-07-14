@@ -29,26 +29,27 @@
 
 /* variants */
 .ds-btn--primary {
-  background-color: var(--ds-color-ink);
-  color: var(--ds-color-white);
-  border-radius: var(--ds-borderRadius-pill);
+  background-color: var(--ds-comp-button-primary-color-bg);
+  color: var(--ds-comp-button-primary-color-fg);
+  border-radius: var(--ds-comp-button-primary-radius);
 }
 
 .ds-btn--primary:not(:disabled):hover {
-  background-color: #2a2520;
+  background-color: var(--ds-comp-button-primary-color-bg-hover);
 }
 
 .ds-btn--secondary {
-  background-color: var(--ds-color-surface-secondary);
-  color: var(--ds-color-text-primary);
-  border-color: var(--ds-color-border-strong);
-  border-radius: var(--ds-borderRadius-pill);
+  background-color: var(--ds-comp-button-secondary-color-bg);
+  color: var(--ds-comp-button-secondary-color-fg);
+  border-color: var(--ds-comp-button-secondary-border);
+  border-radius: var(--ds-comp-button-secondary-radius);
 }
 
 .ds-btn--secondary:not(:disabled):hover {
-  background-color: var(--ds-color-surface-tertiary);
+  background-color: var(--ds-comp-button-secondary-color-bg-hover);
 }
 
+/* Interim: no comp.button.danger tokens in Figma yet — uses global accent primitives */
 .ds-btn--danger {
   background-color: var(--ds-color-accent-terracotta);
   color: var(--ds-color-white);
@@ -56,5 +57,5 @@
 }
 
 .ds-btn--danger:not(:disabled):hover {
-  filter: brightness(0.9);
+  background-color: var(--ds-color-accent-terracotta-deep);
 }
