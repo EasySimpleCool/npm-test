@@ -20,7 +20,7 @@
   border: 1px solid var(--ds-comp-input-field-border);
   border-radius: var(--ds-comp-input-field-radius);
   outline: none;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
+  transition: border-color 0.15s ease;
 }
 
 .ds-field__input:focus {
@@ -39,35 +39,4 @@
 .ds-field__error {
   font-size: var(--ds-fontSize-body-caption);
   color: var(--ds-color-accent-terracotta);
-}
-
-/* quiz option — large clickable pill */
-.ds-quiz-option {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: var(--ds-spacing-lg) var(--ds-spacing-xl);
-  font-family: var(--ds-font-body);
-  font-size: var(--ds-fontSize-body-md);
-  font-weight: var(--ds-fontWeights-regular);
-  color: var(--ds-comp-input-quiz-color-fg);
-  background-color: var(--ds-comp-input-quiz-color-bg);
-  border: 1px solid var(--ds-comp-input-quiz-border);
-  border-radius: var(--ds-comp-input-quiz-radius);
-  cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
-}
-
-.ds-quiz-option:hover:not(:disabled) {
-  background-color: var(--ds-comp-input-quiz-color-bg-hover);
-}
-
-.ds-quiz-option:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.ds-quiz-option--selected {
-  border-color: var(--ds-color-border-strong);
-  background-color: var(--ds-comp-input-quiz-color-bg-hover);
 }

@@ -1,6 +1,6 @@
 {
   "name": "@easysimplecool/design-system",
-  "version": "0.2.6",
+  "version": "0.2.9",
   "description": "A basic design system package for use in production apps and Figma Make.",
   "type": "module",
   "main": "dist/index.js",
@@ -25,7 +25,6 @@
     "build": "npm run build:tokens && vite build",
     "build:tokens": "style-dictionary build --config style-dictionary.config.js",
     "dev": "vite build --watch",
-    "dev:preview": "vite --config preview/vite.config.ts",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
