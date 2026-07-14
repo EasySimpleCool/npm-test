@@ -27,13 +27,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Configure git for commits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
       - name: Regenerate colors.ts and variables.css from tokens.json
         run: npm run build:tokens
 
       - name: Check if generated token files changed
         id: diff
         run: |
-          if git diff --quiet src/tokens/colors.ts src/tokens/variables.css; then
+          if git diff --quiet src/tokens/colors.ts src/tokens/variables.css src/tokens/typography.css; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -42,9 +47,7 @@ jobs:
       - name: Commit regenerated token files
         if: steps.diff.outputs.changed == 'true'
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/tokens/colors.ts src/tokens/variables.css
+          git add src/tokens/colors.ts src/tokens/variables.css src/tokens/typography.css
           git commit -m "chore: regenerate tokens from tokens.json [skip ci]"
           git push
 
