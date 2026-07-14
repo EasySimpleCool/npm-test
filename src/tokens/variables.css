@@ -3,9 +3,9 @@
    Regenerate with: npm run build:tokens */
 
 :root {
-  --ds-color-primary: #4769e6;
+  --ds-color-primary: #47c4e6;
   --ds-color-primary-on: #ffffff;
-  --ds-color-primary-hover: #101a6a;
+  --ds-color-primary-hover: #07363b;
   --ds-color-secondary: #f3f4f6;
   --ds-color-secondary-hover: #e5e7eb;
   --ds-color-text: #111827;
@@ -32,6 +32,6 @@
   --ds-radius-full: 9999px;
   --ds-comp-button-primary-color-fg: #ffffff;
   --ds-comp-button-primary-color-fg-hover: #ffffff;
-  --ds-comp-button-primary-color-bg: #4769e6;
-  --ds-comp-button-primary-color-bg-hover: #101a6a;
+  --ds-comp-button-primary-color-bg: #47c4e6;
+  --ds-comp-button-primary-color-bg-hover: #07363b;
 }
