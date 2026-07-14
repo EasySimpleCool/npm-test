@@ -138,10 +138,10 @@ StyleDictionary.registerFormat({
       }
     }
 
-    out += `  --ds-font-family: var(--ds-font-families-body);\n`;
-    out += `  --ds-font-display: var(--ds-font-families-display);\n`;
-    out += `  --ds-font-body: var(--ds-font-families-body);\n`;
-    out += `  --ds-font-mono: var(--ds-font-families-mono);\n`;
+    out += `  --ds-font-family: var(--ds-fontFamilies-body);\n`;
+    out += `  --ds-font-display: var(--ds-fontFamilies-display);\n`;
+    out += `  --ds-font-body: var(--ds-fontFamilies-body);\n`;
+    out += `  --ds-font-mono: var(--ds-fontFamilies-mono);\n`;
 
     for (const [key, { value, type }] of Object.entries(comp)) {
       const varName = `--ds-${key}`;

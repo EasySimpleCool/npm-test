@@ -25,7 +25,6 @@
     "build": "npm run build:tokens && vite build",
     "build:tokens": "style-dictionary build --config style-dictionary.config.js",
     "dev": "vite build --watch",
-    "dev:preview": "vite --config preview/vite.config.ts",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {

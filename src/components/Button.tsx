@@ -1,24 +1,19 @@
 import './button.css';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'overlay';
-export type ButtonSize = 'sm' | 'md' | 'lg';
-
 export interface ButtonProps {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
+  variant?: 'primary' | 'secondary' | 'danger';
+  size?: 'sm' | 'md' | 'lg';
   disabled?: boolean;
   children: React.ReactNode;
   onClick?: () => void;
-  type?: 'button' | 'submit' | 'reset';
-  className?: string;
 }
 
 /**
- * Pill-shaped button with Second Act variants.
+ * Primary button component.
  *
- * Guidelines: use `primary` for main CTAs, `secondary` for hero supporting actions,
- * `ghost` for low-emphasis links (watch film, quiz pills), `overlay` for controls
- * on image cards.
+ * Guidelines: use `primary` for the single main action on a screen,
+ * `secondary` for supporting actions, and `danger` only for destructive
+ * actions (delete, remove, cancel-with-data-loss).
  */
 export function Button({
   variant = 'primary',
@@ -26,15 +21,13 @@ export function Button({
   disabled = false,
   children,
   onClick,
-  type = 'button',
-  className = '',
 }: ButtonProps) {
   return (
     <button
-      className={`ds-btn ds-btn--${variant} ds-btn--${size} ${className}`.trim()}
+      className={`ds-btn ds-btn--${variant} ds-btn--${size}`}
       disabled={disabled}
       onClick={onClick}
-      type={type}
+      type="button"
     >
       {children}
     </button>

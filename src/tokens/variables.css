@@ -77,10 +77,10 @@
   --ds-comp/button-comp-button-overlay-color-bg: rgba(0, 0, 0, 0.65);
   --ds-comp/button-comp-button-overlay-color-bg-hover: rgba(0, 0, 0, 0.8);
   --ds-comp/button-comp-button-overlay-radius: 6px;
-  --ds-font-family: var(--ds-font-families-body);
-  --ds-font-display: var(--ds-font-families-display);
-  --ds-font-body: var(--ds-font-families-body);
-  --ds-font-mono: var(--ds-font-families-mono);
+  --ds-font-family: var(--ds-fontFamilies-body);
+  --ds-font-display: var(--ds-fontFamilies-display);
+  --ds-font-body: var(--ds-fontFamilies-body);
+  --ds-font-mono: var(--ds-fontFamilies-mono);
   --ds-comp-input-quiz-color-fg: #191512;
   --ds-comp-input-quiz-color-bg: #f7f3ec;
   --ds-comp-input-quiz-color-bg-hover: #ece5d8;
