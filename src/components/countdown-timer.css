@@ -1,0 +1,46 @@
+.ds-countdown {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--ds-spacing-sm);
+  flex-wrap: wrap;
+}
+
+.ds-countdown__group {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--ds-spacing-sm);
+}
+
+.ds-countdown__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ds-countdown__numeral {
+  font-family: var(--ds-font-display);
+  font-size: var(--ds-comp-countdown-font-size-numeral);
+  line-height: 0.9;
+  color: var(--ds-comp-countdown-color-numeral);
+  font-variant-numeric: tabular-nums;
+}
+
+.ds-countdown__numeral--accent {
+  color: var(--ds-comp-countdown-color-accent);
+}
+
+.ds-countdown__label {
+  font-family: var(--ds-font-body);
+  font-size: var(--ds-comp-countdown-font-size-label);
+  color: var(--ds-comp-countdown-color-label);
+  margin-top: var(--ds-spacing-xs);
+  text-transform: capitalize;
+}
+
+.ds-countdown__separator {
+  font-family: var(--ds-font-display);
+  font-size: var(--ds-comp-countdown-font-size-separator);
+  line-height: 0.9;
+  color: var(--ds-comp-countdown-color-separator);
+  padding-bottom: var(--ds-spacing-lg);
+}

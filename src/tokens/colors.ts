@@ -3,68 +3,93 @@
 // Regenerate with: npm run build:tokens
 
 export const colors = {
-  ink: '#191512',
-  white: '#ffffff',
-  surfacePrimary: '#fffdf9',
-  surfaceSecondary: '#f7f3ec',
-  surfaceTertiary: '#ece5d8',
-  accentTeal: '#2f9b91',
-  accentGold: '#d3a044',
-  accentTerracotta: '#c25538',
-  accentPurple: '#8668bd',
-  accentGreen: '#7aab54',
-  textPrimary: '#191512',
-  textBody: 'rgba(25, 21, 18, 0.82)',
-  textMuted: 'rgba(25, 21, 18, 0.65)',
-  textSubtle: 'rgba(25, 21, 18, 0.5)',
-  textOnDark: '#ffffff',
-  textOnDarkMuted: 'rgba(255, 255, 255, 0.85)',
-  textOnDarkSubtle: 'rgba(255, 255, 255, 0.6)',
-  borderStrong: 'rgba(25, 21, 18, 0.35)',
-  borderDefault: 'rgba(25, 21, 18, 0.25)',
-  borderSubtle: 'rgba(25, 21, 18, 0.14)',
-  overlayDark: 'rgba(0, 0, 0, 0.65)',
-  overlayScrim: 'rgba(0, 0, 0, 0.55)',
+  "ink": "#191512",
+  "white": "#ffffff",
+  "surface.primary": "#fffdf9",
+  "surface.secondary": "#f7f3ec",
+  "surface.tertiary": "#ece5d8",
+  "accent.teal": "#2f9b91",
+  "accent.gold": "#d3a044",
+  "accent.terracotta": "#c25538",
+  "accent.purple": "#8668bd",
+  "accent.green": "#7aab54",
+  "text.primary": "#191512",
+  "text.body": "rgba(25, 21, 18, 0.82)",
+  "text.muted": "rgba(25, 21, 18, 0.65)",
+  "text.subtle": "rgba(25, 21, 18, 0.5)",
+  "text.on.dark": "#ffffff",
+  "text.on.dark.muted": "rgba(255, 255, 255, 0.85)",
+  "text.on.dark.subtle": "rgba(255, 255, 255, 0.6)",
+  "border.strong": "rgba(25, 21, 18, 0.35)",
+  "border.default": "rgba(25, 21, 18, 0.25)",
+  "border.subtle": "rgba(25, 21, 18, 0.14)",
+  "overlay.dark": "rgba(0, 0, 0, 0.65)",
+  "overlay.scrim": "rgba(0, 0, 0, 0.55)"
 } as const;
 
 export const spacing = {
-  xs: '4px',
-  sm: '8px',
-  md: '16px',
-  lg: '24px',
-  xl: '32px',
-  2xl: '48px',
-  3xl: '64px',
-  4xl: '96px',
+  "xs": "4px",
+  "sm": "8px",
+  "md": "16px",
+  "lg": "24px",
+  "xl": "32px",
+  "2xl": "48px",
+  "3xl": "64px",
+  "4xl": "96px"
 } as const;
 
-export const typography = {
-  fontFamily: `''Space Grotesk'', -apple-system, sans-serif`,
-  sizes: {
-    displayHero: '168px',
-    displayXl: '118px',
-    displayLg: '100px',
-    displayMd: '72px',
-    displaySm: '44px',
-    bodyLg: '18px',
-    bodyMd: '16px',
-    bodySm: '13px',
-    bodyCaption: '12px',
-    monoMd: '12px',
-    monoSm: '11px',
-    monoXs: '9px',
-  },
-  weights: {
-    regular: 400,
-    medium: 500,
-    bold: 700,
-  },
+export const fontFamilies = {
+  "display": "Anton",
+  "body": "'Space Grotesk'",
+  "mono": "'Space Mono'"
+} as const;
+
+export const fontWeights = {
+  "regular": 400,
+  "medium": 500,
+  "bold": 700
+} as const;
+
+export const fontSizes = {
+  "display.hero": "168px",
+  "display.xl": "118px",
+  "display.lg": "100px",
+  "display.md": "72px",
+  "display.sm": "44px",
+  "body.lg": "18px",
+  "body.md": "16px",
+  "body.sm": "13px",
+  "body.caption": "12px",
+  "mono.md": "12px",
+  "mono.sm": "11px",
+  "mono.xs": "9px"
+} as const;
+
+export const lineHeights = {
+  "display": "0.9",
+  "body": "1.4"
+} as const;
+
+export const letterSpacing = {
+  "mono-wide": "0.12em"
 } as const;
 
 export const radii = {
-  pill: '28px',
-  pillSm: '16px',
-  input: '14px',
-  overlay: '6px',
-  card: '12px',
+  "pill": "28px",
+  "pill-sm": "16px",
+  "input": "14px",
+  "overlay": "6px",
+  "card": "12px"
+} as const;
+
+export const typography = {
+  fontFamily: {
+    display: `'Anton', sans-serif`,
+    body: `''Space Grotesk'', sans-serif`,
+    mono: `''Space Mono'', monospace`,
+  },
+  sizes: fontSizes,
+  weights: fontWeights,
+  lineHeights,
+  letterSpacing,
 } as const;

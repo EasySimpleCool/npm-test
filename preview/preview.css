@@ -1,0 +1,113 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ds-font-body);
+  background-color: var(--ds-color-surface-primary);
+  color: var(--ds-color-text-primary);
+}
+
+.preview-hero {
+  position: relative;
+  min-height: 480px;
+  background: linear-gradient(180deg, rgba(25, 21, 18, 0.3) 0%, rgba(25, 21, 18, 0.7) 100%),
+    url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1600&q=80') center / cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: var(--ds-spacing-3xl);
+}
+
+.preview-hero__title {
+  text-align: center;
+  margin: 0;
+}
+
+.preview-hero__actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--ds-spacing-md);
+  margin-top: var(--ds-spacing-xl);
+}
+
+.preview-block-title {
+  margin: 0 0 var(--ds-spacing-lg);
+}
+
+.preview-subtitle {
+  font-family: var(--ds-font-body);
+  font-size: var(--ds-fontSize-body-lg);
+  color: var(--ds-color-text-body);
+  margin: 0 0 var(--ds-spacing-xl);
+  max-width: 560px;
+}
+
+.preview-featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--ds-spacing-3xl);
+  align-items: center;
+}
+
+.preview-featured__film-title {
+  margin: 0 0 var(--ds-spacing-md);
+}
+
+.preview-character-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--ds-spacing-xl);
+  align-items: center;
+}
+
+.preview-character-grid__info h2 {
+  margin: 0 0 var(--ds-spacing-md);
+}
+
+.preview-character-grid__info p {
+  font-family: var(--ds-font-body);
+  font-size: var(--ds-fontSize-body-lg);
+  color: var(--ds-color-text-body);
+  margin: 0 0 var(--ds-spacing-lg);
+}
+
+.preview-reel {
+  display: flex;
+  gap: var(--ds-spacing-md);
+  overflow-x: auto;
+  padding-bottom: var(--ds-spacing-md);
+  scrollbar-width: thin;
+}
+
+.preview-quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-spacing-md);
+  max-width: 480px;
+}
+
+.preview-cast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--ds-spacing-lg);
+}
+
+.preview-buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-spacing-md);
+  align-items: center;
+}
+
+.preview-section-label {
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-fontSize-mono-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ds-color-text-subtle);
+  margin: 0 0 var(--ds-spacing-sm);
+}
