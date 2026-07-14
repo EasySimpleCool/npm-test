@@ -3,44 +3,93 @@
 // Regenerate with: npm run build:tokens
 
 export const colors = {
-  primary: '#47e662',
-  primaryOn: '#ffffff',
-  primaryHover: '#194f13',
-  secondary: '#f3f4f6',
-  secondaryHover: '#e5e7eb',
-  text: '#111827',
-  textMuted: '#6b7280',
-  border: '#d1d5db',
-  danger: '#dc2626',
-  background: '#ffffff',
+  "ink": "#191512",
+  "white": "#ffffff",
+  "surface.primary": "#fffdf9",
+  "surface.secondary": "#f7f3ec",
+  "surface.tertiary": "#ece5d8",
+  "accent.teal": "#2f9b91",
+  "accent.gold": "#d3a044",
+  "accent.terracotta": "#c25538",
+  "accent.purple": "#8668bd",
+  "accent.green": "#7aab54",
+  "text.primary": "#191512",
+  "text.body": "rgba(25, 21, 18, 0.82)",
+  "text.muted": "rgba(25, 21, 18, 0.65)",
+  "text.subtle": "rgba(25, 21, 18, 0.5)",
+  "text.on.dark": "#ffffff",
+  "text.on.dark.muted": "rgba(255, 255, 255, 0.85)",
+  "text.on.dark.subtle": "rgba(255, 255, 255, 0.6)",
+  "border.strong": "rgba(25, 21, 18, 0.35)",
+  "border.default": "rgba(25, 21, 18, 0.25)",
+  "border.subtle": "rgba(25, 21, 18, 0.14)",
+  "overlay.dark": "rgba(0, 0, 0, 0.65)",
+  "overlay.scrim": "rgba(0, 0, 0, 0.55)"
 } as const;
 
 export const spacing = {
-  xs: '4px',
-  sm: '8px',
-  md: '16px',
-  lg: '24px',
-  xl: '32px',
+  "xs": "4px",
+  "sm": "8px",
+  "md": "16px",
+  "lg": "24px",
+  "xl": "32px",
+  "2xl": "48px",
+  "3xl": "64px",
+  "4xl": "96px"
 } as const;
 
-export const typography = {
-  fontFamily: `'Inter', -apple-system, sans-serif`,
-  sizes: {
-    sm: '14px',
-    md: '16px',
-    lg: '20px',
-    xl: '28px',
-  },
-  weights: {
-    regular: 400,
-    medium: 500,
-    bold: 700,
-  },
+export const fontFamilies = {
+  "display": "Anton",
+  "body": "'Space Grotesk'",
+  "mono": "'Space Mono'"
+} as const;
+
+export const fontWeights = {
+  "regular": 400,
+  "medium": 500,
+  "bold": 700
+} as const;
+
+export const fontSizes = {
+  "display.hero": "168px",
+  "display.xl": "118px",
+  "display.lg": "100px",
+  "display.md": "72px",
+  "display.sm": "44px",
+  "body.lg": "18px",
+  "body.md": "16px",
+  "body.sm": "13px",
+  "body.caption": "12px",
+  "mono.md": "12px",
+  "mono.sm": "11px",
+  "mono.xs": "9px"
+} as const;
+
+export const lineHeights = {
+  "display": "0.9",
+  "body": "1.4"
+} as const;
+
+export const letterSpacing = {
+  "mono-wide": "0.12em"
 } as const;
 
 export const radii = {
-  sm: '4px',
-  md: '8px',
-  lg: '12px',
-  full: '9999px',
+  "pill": "28px",
+  "pill-sm": "16px",
+  "input": "14px",
+  "overlay": "6px",
+  "card": "12px"
+} as const;
+
+export const typography = {
+  fontFamily: {
+    display: `'Anton', sans-serif`,
+    body: `''Space Grotesk'', sans-serif`,
+    mono: `''Space Mono'', monospace`,
+  },
+  sizes: fontSizes,
+  weights: fontWeights,
+  lineHeights,
+  letterSpacing,
 } as const;

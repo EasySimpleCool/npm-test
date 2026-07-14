@@ -1,10 +1,14 @@
 .ds-btn {
-  font-family: var(--ds-font-family);
-  font-weight: var(--ds-font-weight-medium);
-  border-radius: var(--ds-radius-md);
+  font-family: var(--ds-font-body);
+  font-weight: var(--ds-fontWeights-bold);
   border: 1px solid transparent;
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .ds-btn:disabled {
@@ -15,45 +19,71 @@
 /* sizes */
 .ds-btn--sm {
   padding: var(--ds-spacing-xs) var(--ds-spacing-sm);
-  font-size: var(--ds-font-size-sm);
+  font-size: var(--ds-fontSize-body-caption);
 }
 
 .ds-btn--md {
-  padding: var(--ds-spacing-sm) var(--ds-spacing-md);
-  font-size: var(--ds-font-size-md);
+  padding: var(--ds-spacing-sm) var(--ds-spacing-lg);
+  font-size: var(--ds-fontSize-body-md);
 }
 
 .ds-btn--lg {
-  padding: var(--ds-spacing-sm) var(--ds-spacing-lg);
-  font-size: var(--ds-font-size-lg);
+  padding: var(--ds-spacing-md) var(--ds-spacing-xl);
+  font-size: var(--ds-fontSize-body-lg);
 }
 
-/* variants */
+/* primary — ink fill, white text, pill 28 */
 .ds-btn--primary {
   background-color: var(--ds-comp-button-primary-color-bg);
   color: var(--ds-comp-button-primary-color-fg);
+  border-radius: var(--ds-comp-button-primary-radius);
 }
 
 .ds-btn--primary:not(:disabled):hover {
   background-color: var(--ds-comp-button-primary-color-bg-hover);
-  color: var(--ds-comp-button-primary-color-fg-hover);
 }
 
+/* secondary — cream fill, strong border, pill 28 */
 .ds-btn--secondary {
-  background-color: var(--ds-color-secondary);
-  color: var(--ds-color-text);
-  border-color: var(--ds-color-border);
+  background-color: var(--ds-comp-button-secondary-color-bg);
+  color: var(--ds-comp-button-secondary-color-fg);
+  border-color: var(--ds-comp-button-secondary-border);
+  border-radius: var(--ds-comp-button-secondary-radius);
 }
 
 .ds-btn--secondary:not(:disabled):hover {
-  background-color: var(--ds-color-secondary-hover);
+  background-color: var(--ds-comp-button-secondary-color-bg-hover);
 }
 
-.ds-btn--danger {
-  background-color: var(--ds-color-danger);
-  color: var(--ds-color-background);
+/* ghost — no fill, default border, pill 16 */
+.ds-btn--ghost {
+  background-color: var(--ds-comp-button-ghost-color-bg);
+  color: var(--ds-comp-button-ghost-color-fg);
+  border-color: var(--ds-comp-button-ghost-border);
+  border-radius: var(--ds-comp-button-ghost-radius);
 }
 
-.ds-btn--danger:not(:disabled):hover {
-  filter: brightness(0.9);
+.ds-btn--ghost:not(:disabled):hover {
+  background-color: var(--ds-comp-button-ghost-color-bg-hover);
+}
+
+/* overlay — dark translucent, small pill radius 6 */
+.ds-btn--overlay {
+  background-color: var(--ds-comp-button-overlay-color-bg);
+  color: var(--ds-comp-button-overlay-color-fg);
+  border-radius: var(--ds-comp-button-overlay-radius);
+  font-size: var(--ds-fontSize-body-caption);
+  font-weight: var(--ds-fontWeights-bold);
+  padding: var(--ds-spacing-xs) var(--ds-spacing-sm);
+}
+
+.ds-btn--overlay:not(:disabled):hover {
+  background-color: var(--ds-comp-button-overlay-color-bg-hover);
+}
+
+.ds-btn--overlay.ds-btn--sm,
+.ds-btn--overlay.ds-btn--md,
+.ds-btn--overlay.ds-btn--lg {
+  padding: var(--ds-spacing-xs) var(--ds-spacing-sm);
+  font-size: var(--ds-fontSize-body-caption);
 }
