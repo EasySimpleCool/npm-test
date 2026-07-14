@@ -1,27 +1,27 @@
 .ds-field {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  font-family: 'Inter', -apple-system, sans-serif;
+  gap: var(--ds-spacing-xs);
+  font-family: var(--ds-font-family);
 }
 
 .ds-field__label {
-  font-size: 14px;
-  font-weight: 500;
-  color: #111827;
+  font-size: var(--ds-font-size-sm);
+  font-weight: var(--ds-font-weight-medium);
+  color: var(--ds-color-text);
 }
 
 .ds-field__input {
-  padding: 10px 12px;
-  font-size: 16px;
-  border: 1px solid #D1D5DB;
-  border-radius: 8px;
+  padding: var(--ds-spacing-sm) var(--ds-spacing-md);
+  font-size: var(--ds-font-size-md);
+  border: 1px solid var(--ds-color-border);
+  border-radius: var(--ds-radius-md);
   outline: none;
   transition: border-color 0.15s ease;
 }
 
 .ds-field__input:focus {
-  border-color: #4F46E5;
+  border-color: var(--ds-color-primary);
 }
 
 .ds-field__input:disabled {
@@ -30,10 +30,10 @@
 }
 
 .ds-field__input--error {
-  border-color: #DC2626;
+  border-color: var(--ds-color-danger);
 }
 
 .ds-field__error {
-  font-size: 13px;
-  color: #DC2626;
+  font-size: var(--ds-font-size-sm);
+  color: var(--ds-color-danger);
 }
