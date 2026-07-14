@@ -4,22 +4,30 @@
 
 export const colors = {
   "ink": "#191512",
+  "ink.hover": "#3a332b",
   "white": "#ffffff",
   "surface.primary": "#fffdf9",
   "surface.secondary": "#f7f3ec",
   "surface.tertiary": "#ece5d8",
+  "surface.hover": "#f2ecdf",
   "accent.teal": "#2f9b91",
+  "accent.teal.deep": "#1c7069",
   "accent.gold": "#d3a044",
+  "accent.gold.deep": "#a3762a",
   "accent.terracotta": "#c25538",
+  "accent.terracotta.deep": "#96371e",
   "accent.purple": "#8668bd",
+  "accent.purple.deep": "#5f4494",
   "accent.green": "#7aab54",
+  "accent.green.deep": "#557f36",
   "text.primary": "#191512",
   "text.body": "rgba(25, 21, 18, 0.82)",
   "text.muted": "rgba(25, 21, 18, 0.65)",
-  "text.subtle": "rgba(25, 21, 18, 0.5)",
+  "text.subtle": "rgba(25, 21, 18, 0.50)",
   "text.on.dark": "#ffffff",
   "text.on.dark.muted": "rgba(255, 255, 255, 0.85)",
-  "text.on.dark.subtle": "rgba(255, 255, 255, 0.6)",
+  "text.on.dark.subtle": "rgba(255, 255, 255, 0.60)",
+  "text.accent": "#c25538",
   "border.strong": "rgba(25, 21, 18, 0.35)",
   "border.default": "rgba(25, 21, 18, 0.25)",
   "border.subtle": "rgba(25, 21, 18, 0.14)",
@@ -47,6 +55,7 @@ export const fontFamilies = {
 export const fontWeights = {
   "regular": 400,
   "medium": 500,
+  "semibold": 600,
   "bold": 700
 } as const;
 
@@ -56,6 +65,7 @@ export const fontSizes = {
   "display.lg": "100px",
   "display.md": "72px",
   "display.sm": "44px",
+  "display.xs": "28px",
   "body.lg": "18px",
   "body.md": "16px",
   "body.sm": "13px",
@@ -67,11 +77,16 @@ export const fontSizes = {
 
 export const lineHeights = {
   "display": "0.9",
-  "body": "1.4"
+  "snug": "1",
+  "heading": "1.1",
+  "body": "1.4",
+  "relaxed": "1.55"
 } as const;
 
 export const letterSpacing = {
-  "mono-wide": "0.12em"
+  "display": "0.01em",
+  "mono-wide": "0.12em",
+  "mono-widest": "0.14em"
 } as const;
 
 export const radii = {
