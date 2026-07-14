@@ -49,7 +49,7 @@ export const spacing = {
 } as const;
 
 export const fontFamilies = {
-  "display": "Anton",
+  "display": "'Alfa Slab One'",
   "body": "'Space Grotesk'",
   "mono": "'Space Mono'"
 } as const;
@@ -101,7 +101,7 @@ export const radii = {
 
 export const typography = {
   fontFamily: {
-    display: `'Anton', sans-serif`,
+    display: `''Alfa Slab One'', sans-serif`,
     body: `''Space Grotesk'', sans-serif`,
     mono: `''Space Mono'', monospace`,
   },

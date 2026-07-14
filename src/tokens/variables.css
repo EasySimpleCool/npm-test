@@ -43,7 +43,7 @@
   --ds-spacing-2xl: 48px;
   --ds-spacing-3xl: 64px;
   --ds-spacing-4xl: 96px;
-  --ds-fontFamilies-display: Anton;
+  --ds-fontFamilies-display: 'Alfa Slab One';
   --ds-fontFamilies-body: 'Space Grotesk';
   --ds-fontFamilies-mono: 'Space Mono';
   --ds-fontWeights-regular: 400;
@@ -76,12 +76,12 @@
   --ds-borderRadius-input: 14px;
   --ds-borderRadius-overlay: 6px;
   --ds-borderRadius-card: 12px;
-  --ds-type-display-hero: 400 168px/0.9 Anton;
-  --ds-type-display-xl: 400 118px/0.9 Anton;
-  --ds-type-display-lg: 400 100px/0.9 Anton;
-  --ds-type-display-md: 400 72px/1.1 Anton;
-  --ds-type-display-sm: 400 44px/1 Anton;
-  --ds-type-display-xs: 400 28px/1 Anton;
+  --ds-type-display-hero: 400 168px/0.9 'Alfa Slab One';
+  --ds-type-display-xl: 400 118px/0.9 'Alfa Slab One';
+  --ds-type-display-lg: 400 100px/0.9 'Alfa Slab One';
+  --ds-type-display-md: 400 72px/1.1 'Alfa Slab One';
+  --ds-type-display-sm: 400 44px/1 'Alfa Slab One';
+  --ds-type-display-xs: 400 28px/1 'Alfa Slab One';
   --ds-type-body-lg: 400 18px/1.55 'Space Grotesk';
   --ds-type-body-md: 400 16px/1.4 'Space Grotesk';
   --ds-type-body-sm: 400 13px/1.4 'Space Grotesk';
