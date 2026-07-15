@@ -1,5 +1,5 @@
 .ds-btn {
-  font-family: var(--ds-font-body);
+  font-family: var(--ds-fontFamilies-body);
   font-weight: var(--ds-fontWeights-bold);
   border: 1px solid transparent;
   cursor: pointer;
