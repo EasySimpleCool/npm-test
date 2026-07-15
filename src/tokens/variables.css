@@ -97,8 +97,8 @@
   --ds-font-body: var(--ds-fontFamilies-body);
   --ds-font-mono: var(--ds-fontFamilies-mono);
   --ds-comp-button-primary-color-fg: #ffffff;
-  --ds-comp-button-primary-color-bg: #db0081;
-  --ds-comp-button-primary-color-bg-hover: #ad005f;
+  --ds-comp-button-primary-color-bg: #7aab54;
+  --ds-comp-button-primary-color-bg-hover: #557f36;
   --ds-comp-button-primary-radius: 28px;
   --ds-comp-button-secondary-color-fg: #db0081;
   --ds-comp-button-secondary-color-fg-hover: #ffffff;
