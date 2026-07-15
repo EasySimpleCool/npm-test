@@ -6,7 +6,7 @@ export const colors = {
   "ink": "#191512",
   "ink.hover": "#3a332b",
   "white": "#ffffff",
-  "surface.primary": "#fffdf9",
+  "surface.primary": "#ffffff",
   "surface.secondary": "#f7f3ec",
   "surface.tertiary": "#ece5d8",
   "surface.hover": "#f2ecdf",
@@ -49,8 +49,8 @@ export const spacing = {
 } as const;
 
 export const fontFamilies = {
-  "display": "'Alfa Slab One'",
-  "body": "'Poppins'",
+  "display": "Anton",
+  "body": "'Space Grotesk'",
   "mono": "'Space Mono'"
 } as const;
 
@@ -101,8 +101,8 @@ export const radii = {
 
 export const typography = {
   fontFamily: {
-    display: `''Alfa Slab One'', sans-serif`,
-    body: `''Poppins'', sans-serif`,
+    display: `'Anton', sans-serif`,
+    body: `''Space Grotesk'', sans-serif`,
     mono: `''Space Mono'', monospace`,
   },
   sizes: fontSizes,
