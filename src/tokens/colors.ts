@@ -49,8 +49,8 @@ export const spacing = {
 } as const;
 
 export const fontFamilies = {
-  "display": "Anton",
-  "body": "'Space Grotesk'",
+  "display": "Playfair",
+  "body": "Inter",
   "mono": "'Space Mono'"
 } as const;
 
@@ -101,8 +101,8 @@ export const radii = {
 
 export const typography = {
   fontFamily: {
-    display: `'Anton', sans-serif`,
-    body: `''Space Grotesk'', sans-serif`,
+    display: `'Playfair', sans-serif`,
+    body: `'Inter', sans-serif`,
     mono: `''Space Mono'', monospace`,
   },
   sizes: fontSizes,
