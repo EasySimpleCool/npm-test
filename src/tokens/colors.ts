@@ -10,7 +10,7 @@ export const colors = {
   "surface.secondary": "#f7f3ec",
   "surface.tertiary": "#ece5d8",
   "surface.hover": "#f2ecdf",
-  "accent.pink": "#0005db",
+  "accent.pink": "#db0081",
   "accent.pink.deep": "#ad005f",
   "accent.teal": "#2f9b91",
   "accent.teal.deep": "#1c7069",
@@ -49,11 +49,14 @@ export const spacing = {
 } as const;
 
 export const fontFamilies = {
-  "display": "'Space Grotesk'",
-  "body": "'IBM Plex Mono'",
+  "display": "Kablammo",
+  "body": "Inter",
   "mono": "'Space Mono'",
   "space-grotesk": "'Space Grotesk'",
-  "ibm-plex": "'IBM Plex Mono'"
+  "ibm-plex": "'IBM Plex Mono'",
+  "inter": "Inter",
+  "montserrat": "Montserrat",
+  "kablammo": "Kablammo"
 } as const;
 
 export const fontWeights = {
@@ -103,8 +106,8 @@ export const radii = {
 
 export const typography = {
   fontFamily: {
-    display: `''Space Grotesk'', sans-serif`,
-    body: `''IBM Plex Mono'', sans-serif`,
+    display: `'Kablammo', sans-serif`,
+    body: `'Inter', sans-serif`,
     mono: `''Space Mono'', monospace`,
   },
   sizes: fontSizes,
