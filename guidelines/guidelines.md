@@ -1,15 +1,9 @@
-# Design System Guidelines
+# Second Act Design System Guidelines
 
-This project ships **CSS tokens only** via `@easysimplecool/design-system`.
+Source of truth for Figma Make kit content: **`dist/guidelines.md`**, regenerated on every `npm run build:tokens`.
 
-## Tokens
+Copy the contents of `dist/guidelines.md` into your Make kit guidelines after each token publish. You can also read it from the published package at `@easysimplecool/design-system/guidelines.md`.
 
-- Import: `import "@easysimplecool/design-system/variables.css"`
-- Reference values with `var(--ds-*)` (e.g. `var(--ds-color-ink)`).
-- Do not hardcode hex colors, px spacing, or font sizes that already exist as tokens.
-- If a value you need doesn't exist in tokens, do not invent one — use the closest existing token or request it in Tokens Studio.
+The generated file covers both **Second Act** and **Aware Super** brands: bootstrap setup, troubleshooting, theme axes, typography, auto-generated token catalogs, UI patterns, and local component recipes — aligned with the CSS-only package (`variables.css` + `theme.css`).
 
-## General
-
-- Do not reintroduce Style Dictionary or token build tooling in consumer apps.
-- Components (Button, Input, etc.) are out of scope for this package.
+Curated content lives in [`guidelines/fragments/`](fragments/); the build merges fragments with auto-generated token tables in [`scripts/generate-make-guidelines.mjs`](../scripts/generate-make-guidelines.mjs).

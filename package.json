@@ -6,7 +6,8 @@
   "exports": {
     ".": "./dist/variables.css",
     "./variables.css": "./dist/variables.css",
-    "./theme.css": "./dist/theme.css"
+    "./theme.css": "./dist/theme.css",
+    "./guidelines.md": "./dist/guidelines.md"
   },
   "files": [
     "dist"

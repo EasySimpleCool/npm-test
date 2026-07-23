@@ -48,8 +48,8 @@ jobs:
 
       - name: Commit regenerated CSS if changed
         run: |
-          if ! git diff --quiet dist/variables.css dist/theme.css; then
-            git add dist/variables.css dist/theme.css
+          if ! git diff --quiet dist/variables.css dist/theme.css dist/guidelines.md; then
+            git add dist/variables.css dist/theme.css dist/guidelines.md
             git commit -m "chore: regenerate tokens CSS from token sets [skip ci]"
             git push
           fi
@@ -69,5 +69,20 @@ jobs:
         run: |
           V=$(node -p "require('./package.json').version")
           echo "## Published @easysimplecool/design-system@$V" >> $GITHUB_STEP_SUMMARY
-          echo "Install base: \`import \"@easysimplecool/design-system/variables.css\"\`" >> $GITHUB_STEP_SUMMARY
-          echo "Install themes: \`import \"@easysimplecool/design-system/theme.css\"\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Make kit dependency" >> $GITHUB_STEP_SUMMARY
+          echo '```json' >> $GITHUB_STEP_SUMMARY
+          echo '{' >> $GITHUB_STEP_SUMMARY
+          echo '  "dependencies": {' >> $GITHUB_STEP_SUMMARY
+          echo "    \"@easysimplecool/design-system\": \"$V\"" >> $GITHUB_STEP_SUMMARY
+          echo '  }' >> $GITHUB_STEP_SUMMARY
+          echo '}' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### CSS imports (app entry)" >> $GITHUB_STEP_SUMMARY
+          echo '```js' >> $GITHUB_STEP_SUMMARY
+          echo 'import "@easysimplecool/design-system/variables.css";' >> $GITHUB_STEP_SUMMARY
+          echo 'import "@easysimplecool/design-system/theme.css";' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Refresh Make kit guidelines from \`dist/guidelines.md\` (or \`@easysimplecool/design-system/guidelines.md\`) after updating the dependency." >> $GITHUB_STEP_SUMMARY
