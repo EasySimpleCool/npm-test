@@ -1,0 +1,96 @@
+{
+  "button": {
+    "primary": {
+      "color": {
+        "fg": {
+          "value": "{color.white}",
+          "type": "color"
+        },
+        "bg": {
+          "value": "{color.accent.pink}",
+          "type": "color"
+        },
+        "bg-hover": {
+          "value": "{color.accent.pink-deep}",
+          "type": "color"
+        }
+      },
+      "radius": {
+        "value": "{borderRadius.pill}",
+        "type": "borderRadius"
+      }
+    },
+    "secondary": {
+      "color": {
+        "fg": {
+          "value": "{color.accent.pink}",
+          "type": "color"
+        },
+        "fg-hover": {
+          "value": "{color.white}",
+          "type": "color"
+        },
+        "bg": {
+          "value": "rgba(255,255,255,0)",
+          "type": "color"
+        },
+        "bg-hover": {
+          "value": "{color.accent.pink-deep}",
+          "type": "color"
+        }
+      },
+      "radius": {
+        "value": "{borderRadius.pill}",
+        "type": "borderRadius"
+      },
+      "border": {
+        "value": "{color.accent.pink}",
+        "type": "color"
+      }
+    },
+    "ghost": {
+      "color": {
+        "fg": {
+          "value": "{color.ink}",
+          "type": "color"
+        },
+        "bg": {
+          "value": "transparent",
+          "type": "color"
+        },
+        "bg-hover": {
+          "value": "rgba(25, 21, 18, 0.05)",
+          "type": "color"
+        }
+      },
+      "radius": {
+        "value": "{borderRadius.pill-sm}",
+        "type": "borderRadius"
+      },
+      "border": {
+        "value": "{color.border.default}",
+        "type": "color"
+      }
+    },
+    "overlay": {
+      "color": {
+        "fg": {
+          "value": "{color.white}",
+          "type": "color"
+        },
+        "bg": {
+          "value": "{color.overlay.dark}",
+          "type": "color"
+        },
+        "bg-hover": {
+          "value": "rgba(0, 0, 0, 0.80)",
+          "type": "color"
+        }
+      },
+      "radius": {
+        "value": "{borderRadius.overlay}",
+        "type": "borderRadius"
+      }
+    }
+  }
+}
