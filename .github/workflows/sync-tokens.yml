@@ -33,17 +33,17 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Regenerate token output
+      - name: Regenerate CSS tokens
         run: npm run build:tokens
 
       - name: Validate tokens
         run: npm run validate:tokens
 
-      - name: Commit regenerated files if changed
+      - name: Commit regenerated CSS if changed
         run: |
-          if ! git diff --quiet src/tokens/colors.ts src/tokens/variables.css src/tokens/typography.css; then
-            git add src/tokens/colors.ts src/tokens/variables.css src/tokens/typography.css
-            git commit -m "chore: regenerate tokens from tokens.json [skip ci]"
+          if ! git diff --quiet dist/variables.css; then
+            git add dist/variables.css
+            git commit -m "chore: regenerate tokens CSS from tokens.json [skip ci]"
             git push
           fi
 
@@ -58,8 +58,8 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Show version to pin in Figma Make
+      - name: Show version to pin
         run: |
           V=$(node -p "require('./package.json').version")
-          echo "## 📦 Published @easysimplecool/design-system@$V" >> $GITHUB_STEP_SUMMARY
-          echo "Pin in Figma Make: \`\"@easysimplecool/design-system\": \"$V\"\`" >> $GITHUB_STEP_SUMMARY
+          echo "## Published @easysimplecool/design-system@$V" >> $GITHUB_STEP_SUMMARY
+          echo "Install CSS: \`import \"@easysimplecool/design-system/variables.css\"\`" >> $GITHUB_STEP_SUMMARY

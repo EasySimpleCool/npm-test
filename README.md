@@ -1,91 +1,85 @@
 # @easysimplecool/design-system
 
-A minimal design system package (Button, Input, tokens) set up to build,
-publish, and use inside Figma Make via a Make kit.
+CSS custom properties generated from Figma via Tokens Studio + Style Dictionary.
+Consumers get **only** `dist/variables.css` — no React, no Style Dictionary.
 
-## 1. Install dependencies
+## Pipeline
+
+1. Edit tokens in Figma → Tokens Studio **push** → updates `src/tokens/tokens.json`
+2. GitHub Action runs Style Dictionary → commits `dist/variables.css` → publishes to npm
+3. Apps import the CSS and use `var(--ds-…)`
+
+## Consume (CSS only)
+
+### Cursor / Claude Code / any Node project
+
+```bash
+npm install @easysimplecool/design-system
+```
+
+```js
+import "@easysimplecool/design-system/variables.css";
+```
+
+Then use tokens in your CSS or inline styles:
+
+```css
+.button {
+  color: var(--ds-color-ink);
+  background: var(--ds-color-surface-secondary);
+}
+```
+
+### Figma Make
+
+Pin the package in the Make kit dependencies (use the version from npm after each token publish):
+
+```json
+"@easysimplecool/design-system": "0.2.43"
+```
+
+Import the stylesheet the same way — this package ships CSS only (no Button/Input components).
+
+```js
+import "@easysimplecool/design-system/variables.css";
+```
+
+### Static sites / no package manager
+
+Link the published file via jsDelivr (mirrors npm):
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@easysimplecool/design-system/dist/variables.css"
+/>
+```
+
+Pin a version for a frozen snapshot (replace with the version you want):
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@easysimplecool/design-system@0.2.43/dist/variables.css"
+/>
+```
+
+## Local kitchen build (maintainers only)
 
 ```bash
 npm install
-```
-
-## 2. Build the package
-
-```bash
 npm run build
 ```
 
-This outputs `dist/index.js`, `dist/index.mjs`, and `dist/index.d.ts` —
-the CJS build, ESM build, and type declarations respectively.
-
-## 3. Try it locally before publishing
-
-From this folder:
-
-```bash
-npm pack
-```
-
-This creates a `.tgz` file you can install into a throwaway test app with
-`npm install /path/to/yourscope-design-system-0.1.0.tgz` — a good sanity
-check before it ever touches npm or Figma Make.
-
-## 4. Publish
-
-**Public package** (works on any Figma Make plan):
-
-```bash
-npm login
-npm publish --access public
-```
-
-**Private package** (requires a paid Figma plan + org admin to set up a
-scope in Figma's private npm registry first):
-
-1. In Figma: Admin → Resources → npm registry → set up your org's scope
-   and get the `.npmrc` snippet with an access token.
-2. Drop that `.npmrc` into this project.
-3. `npm publish`
-
-## 5. Wire it into a Make kit
-
-1. Open Figma Make, create or open a file.
-2. Go through **Get started with Make kits** and add this package by name
-   (`@easysimplecool/design-system`).
-3. Attach the `guidelines/guidelines.md` file from this repo — Figma Make
-   reads it to learn your conventions (when to use which variant, which
-   tokens to reference, etc.).
-4. Prompt Figma Make to build something ("build a login form") and confirm
-   it reaches for `Button` and `Input` from your package instead of
-   generating its own from scratch.
-
-## 6. Before you demo, double check
-
-- [ ] `react` / `react-dom` are in `peerDependencies`, not `dependencies`
-      (Figma Make provides its own React — bundling yours causes conflicts)
-- [ ] No workspace-only or monorepo-internal imports left in `src/`
-- [ ] `npm run build` completes with no errors
-- [ ] `guidelines/guidelines.md` is attached to the Make kit, not just
-      sitting in this repo
-- [ ] You've tested one actual prompt in Figma Make and it picked up your
-      components, not generic ones
+Output: `dist/variables.css`. Consumer apps should not run this.
 
 ## Folder structure
 
 ```
-my-design-system/
-├── src/
-│   ├── components/
-│   │   ├── Button.tsx
-│   │   ├── button.css
-│   │   ├── Input.tsx
-│   │   └── input.css
-│   ├── tokens/
-│   │   └── colors.ts
-│   └── index.ts
-├── guidelines/
-│   └── guidelines.md
-├── package.json
-├── tsconfig.json
-└── vite.config.ts
+npm-test/
+├── src/tokens/tokens.json   # Tokens Studio source of truth
+├── dist/variables.css       # generated + committed artifact
+├── style-dictionary.config.js
+├── scripts/validate-tokens.mjs
+└── .github/workflows/sync-tokens.yml
 ```
