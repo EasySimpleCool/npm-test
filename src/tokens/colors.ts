@@ -49,8 +49,8 @@ export const spacing = {
 } as const;
 
 export const fontFamilies = {
-  "display": "Inter",
-  "body": "Inter",
+  "display": "'Space Grotesk'",
+  "body": "Montserrat",
   "mono": "'Space Mono'",
   "space-grotesk": "'Space Grotesk'",
   "ibm-plex": "'IBM Plex Mono'",
@@ -106,8 +106,8 @@ export const radii = {
 
 export const typography = {
   fontFamily: {
-    display: `'Inter', sans-serif`,
-    body: `'Inter', sans-serif`,
+    display: `''Space Grotesk'', sans-serif`,
+    body: `'Montserrat', sans-serif`,
     mono: `''Space Mono'', monospace`,
   },
   sizes: fontSizes,
