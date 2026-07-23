@@ -57,10 +57,10 @@ export const fontFamilies = {
 } as const;
 
 export const fontWeights = {
-  "regular": 400,
-  "medium": 500,
-  "semibold": 600,
-  "bold": 700
+  "regular": null,
+  "medium": null,
+  "semibold": null,
+  "bold": null
 } as const;
 
 export const fontSizes = {
