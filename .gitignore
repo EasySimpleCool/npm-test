@@ -3,6 +3,7 @@ node_modules/
 
 # Style Dictionary normalize scratch file
 src/tokens/.tokens.normalized.json
+src/tokens/.build/
 
 # Environment
 .env

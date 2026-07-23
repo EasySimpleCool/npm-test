@@ -3,14 +3,14 @@ import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import StyleDictionary from 'style-dictionary';
 import { register } from '@tokens-studio/sd-transforms';
-import { loadTokenSets, normalizeTokenSets, RESERVED_KEYS } from './scripts/load-tokens.mjs';
+import { loadTokenSets, normalizeTokenSets, filterForDesignSystemBuild, RESERVED_KEYS } from './scripts/load-tokens.mjs';
 
 register(StyleDictionary, { excludeParentKeys: true });
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const NORMALIZED_PATH = join(__dirname, 'src/tokens/.tokens.normalized.json');
 
-const tokens = normalizeTokenSets(loadTokenSets());
+const tokens = normalizeTokenSets(filterForDesignSystemBuild(loadTokenSets()));
 writeFileSync(NORMALIZED_PATH, JSON.stringify(tokens, null, 2));
 
 function parseKey(key) {
@@ -32,7 +32,24 @@ function withPx(value) {
 }
 
 function tokenKeyToCssVar(key) {
-  return `--ds-${key}`;
+  let normalized = key.startsWith('colour-') ? key.replace(/^colour-/, 'color-') : key;
+  if (normalized.startsWith('ds-')) {
+    normalized = normalized.slice(3);
+  }
+  return `--ds-${normalized}`;
+}
+
+function shouldIncludeToken(parts, type) {
+  if (type === 'composition') return false;
+  if (parts[0] === 'sa') return false;
+  return true;
+}
+
+function flatTokenKey(parts) {
+  if (parts[0] === 'ds') {
+    return parts.slice(1).join('-');
+  }
+  return parts.join('-');
 }
 
 function groupTokensByKey(dictionary) {
@@ -41,8 +58,10 @@ function groupTokensByKey(dictionary) {
 
   for (const token of dictionary.allTokens) {
     const parts = parseKey(token.key);
+    if (!shouldIncludeToken(parts, token.type)) continue;
+
     const bucket = parts[0] === 'comp' ? comp : global;
-    const flatKey = parts.join('-');
+    const flatKey = flatTokenKey(parts);
     bucket[flatKey] = { value: token.value, type: token.type, parts };
   }
 
@@ -74,7 +93,7 @@ StyleDictionary.registerFormat({
     }
 
     out += `  --ds-font-family: var(--ds-fontFamilies-body);\n`;
-    out += `  --ds-font-display: var(--ds-fontFamilies-display);\n`;
+    out += `  --ds-font-display: var(--ds-fontFamilies-space-grotesk);\n`;
     out += `  --ds-font-body: var(--ds-fontFamilies-body);\n`;
     out += `  --ds-font-mono: var(--ds-fontFamilies-mono);\n`;
 

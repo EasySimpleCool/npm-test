@@ -7,7 +7,9 @@ import {
 
 const tokens = normalizeTokenSets(loadTokenSets());
 const actualSets = Object.keys(tokens).filter((key) => !RESERVED_KEYS.has(key));
-const declaredOrder = tokens.$metadata?.tokenSetOrder ?? [];
+const declaredOrder = (tokens.$metadata?.tokenSetOrder ?? []).filter(
+  (setName) => !RESERVED_KEYS.has(setName),
+);
 
 const ghostSets = declaredOrder.filter((setName) => !actualSets.includes(setName));
 const undeclaredSets = actualSets.filter((setName) => !declaredOrder.includes(setName));

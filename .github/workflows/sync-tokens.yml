@@ -5,6 +5,11 @@ on:
     branches: [main]
     paths:
       - 'src/tokens/**'
+      - 'scripts/**'
+      - 'test/**'
+      - 'style-dictionary.config.js'
+      - 'package.json'
+      - 'package-lock.json'
   workflow_dispatch:
 
 concurrency:
@@ -33,16 +38,18 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+      - name: Validate and test tokens
+        run: |
+          npm run validate:tokens
+          npm test
+
       - name: Regenerate CSS tokens
         run: npm run build:tokens
 
-      - name: Validate tokens
-        run: npm run validate:tokens
-
       - name: Commit regenerated CSS if changed
         run: |
-          if ! git diff --quiet dist/variables.css; then
-            git add dist/variables.css
+          if ! git diff --quiet dist/variables.css dist/theme.css; then
+            git add dist/variables.css dist/theme.css
             git commit -m "chore: regenerate tokens CSS from token sets [skip ci]"
             git push
           fi
@@ -62,4 +69,5 @@ jobs:
         run: |
           V=$(node -p "require('./package.json').version")
           echo "## Published @easysimplecool/design-system@$V" >> $GITHUB_STEP_SUMMARY
-          echo "Install CSS: \`import \"@easysimplecool/design-system/variables.css\"\`" >> $GITHUB_STEP_SUMMARY
+          echo "Install base: \`import \"@easysimplecool/design-system/variables.css\"\`" >> $GITHUB_STEP_SUMMARY
+          echo "Install themes: \`import \"@easysimplecool/design-system/theme.css\"\`" >> $GITHUB_STEP_SUMMARY

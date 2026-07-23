@@ -5,7 +5,8 @@
   "type": "module",
   "exports": {
     ".": "./dist/variables.css",
-    "./variables.css": "./dist/variables.css"
+    "./variables.css": "./dist/variables.css",
+    "./theme.css": "./dist/theme.css"
   },
   "files": [
     "dist"
@@ -20,7 +21,8 @@
   },
   "scripts": {
     "build": "npm run build:tokens",
-    "build:tokens": "style-dictionary build --config style-dictionary.config.js",
+    "build:tokens": "node scripts/build-all.mjs",
+    "test": "node --test test/**/*.test.mjs",
     "validate:tokens": "node scripts/validate-tokens.mjs",
     "prepublishOnly": "npm run build"
   },

@@ -1,5 +1,5 @@
-import { existsSync, readdirSync, readFileSync } from 'fs';
-import { dirname, join } from 'path';
+import { existsSync, readdirSync, readFileSync, statSync } from 'fs';
+import { dirname, join, relative } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -8,22 +8,49 @@ export const TOKENS_DIR = join(__dirname, '../src/tokens');
 const SKIP_FILES = new Set([
   '$metadata.json',
   '$themes.json',
+  '$figma-collections.json',
   '.tokens.normalized.json',
   '.tokens.test.json',
 ]);
-export const RESERVED_KEYS = new Set(['$themes', '$metadata']);
+
+export const RESERVED_KEYS = new Set(['$themes', '$metadata', '$figma-collections']);
+export const BUTTON_SET = '7. Components/Button';
+export const EXCLUDED_OUTPUT_TYPES = new Set(['composition']);
+
+/** Token sets that ship in @easysimplecool/design-system variables.css */
+export const DESIGN_SYSTEM_CSS_SETS = ['0. Core/Default', '7. Components/Button'];
+
+export function getTokenSetOrder(tokens) {
+  return (tokens.$metadata?.tokenSetOrder ?? []).filter((setName) => !RESERVED_KEYS.has(setName));
+}
+
+export function getThemes(tokens) {
+  return tokens.$themes ?? [];
+}
+
+function walkJsonFiles(dir, baseDir = dir, files = []) {
+  for (const entry of readdirSync(dir)) {
+    if (entry.startsWith('.')) continue;
+    const fullPath = join(dir, entry);
+    if (statSync(fullPath).isDirectory()) {
+      walkJsonFiles(fullPath, baseDir, files);
+      continue;
+    }
+    if (!entry.endsWith('.json') || SKIP_FILES.has(entry)) continue;
+    const setName = relative(baseDir, fullPath).replace(/\\/g, '/').replace(/\.json$/, '');
+    files.push({ setName, fullPath });
+  }
+  return files;
+}
 
 /**
- * Load Tokens Studio multifile output from src/tokens/.
- * Each *.json file (except metadata/themes) is a token set named after the file stem.
+ * Load Tokens Studio multifile output from src/tokens/ (supports nested folders).
  */
 export function loadTokenSets(tokensDir = TOKENS_DIR) {
   const tokens = {};
 
-  for (const file of readdirSync(tokensDir)) {
-    if (!file.endsWith('.json') || file.startsWith('.') || SKIP_FILES.has(file)) continue;
-    const setName = file.replace(/\.json$/, '');
-    tokens[setName] = JSON.parse(readFileSync(join(tokensDir, file), 'utf8'));
+  for (const { setName, fullPath } of walkJsonFiles(tokensDir)) {
+    tokens[setName] = JSON.parse(readFileSync(fullPath, 'utf8'));
   }
 
   const metadataPath = join(tokensDir, '$metadata.json');
@@ -39,27 +66,42 @@ export function loadTokenSets(tokensDir = TOKENS_DIR) {
   return tokens;
 }
 
+export function setNameToPath(setName, tokensDir = TOKENS_DIR) {
+  return join(tokensDir, `${setName}.json`);
+}
+
+/**
+ * Keep only sets that belong in the published design-system CSS bundle.
+ * Theme axis overrides (Accent/*, Canvas/*, etc.) stay in repo for Figma
+ * but are not emitted to variables.css.
+ */
+export function filterForDesignSystemBuild(tokens) {
+  const filtered = {};
+  const order = DESIGN_SYSTEM_CSS_SETS.filter((setName) => tokens[setName]);
+
+  for (const setName of order) {
+    filtered[setName] = tokens[setName];
+  }
+
+  filtered.$metadata = {
+    ...tokens.$metadata,
+    tokenSetOrder: order,
+  };
+
+  return filtered;
+}
+
 function isDuplicateSetWrapper(setContent, setName) {
   if (!Object.prototype.hasOwnProperty.call(setContent, setName)) return false;
 
   const inner = setContent[setName];
   if (!inner || typeof inner !== 'object' || Array.isArray(inner)) return false;
 
-  // Slash-named sets (e.g. comp/button) may repeat the set name as a wrapper.
   if (setName.includes('/')) return true;
 
-  // Otherwise only hoist when the inner group repeats the set name again.
   return Object.prototype.hasOwnProperty.call(inner, setName);
 }
 
-/**
- * Tokens Studio can push a duplicate set-name group inside a token set
- * (e.g. "comp/button": { "comp/button": { "comp": { "button": ... } } }).
- * That produces invalid CSS vars with slashes. Hoist children when detected.
- *
- * Multifile sets like "button": { "button": { "primary": ... } } keep the inner
- * group — it is the component namespace, not a duplicate wrapper.
- */
 export function unwrapDuplicateSetKeys(setContent, setName) {
   if (!setContent || typeof setContent !== 'object' || Array.isArray(setContent)) {
     return setContent;
@@ -86,7 +128,9 @@ export function findDuplicateSetKeys(tokens) {
 
 function syncMetadata(tokens) {
   const actualSets = Object.keys(tokens).filter((key) => !RESERVED_KEYS.has(key));
-  const declaredOrder = tokens.$metadata?.tokenSetOrder ?? [];
+  const declaredOrder = (tokens.$metadata?.tokenSetOrder ?? []).filter(
+    (setName) => !RESERVED_KEYS.has(setName),
+  );
 
   const ghostSets = declaredOrder.filter((setName) => !actualSets.includes(setName));
   const undeclaredSets = actualSets.filter((setName) => !declaredOrder.includes(setName));
@@ -104,9 +148,8 @@ function syncMetadata(tokens) {
   }
 
   const reconciledOrder = [
-    ...(actualSets.includes('global') ? ['global'] : []),
-    ...declaredOrder.filter((setName) => setName !== 'global' && actualSets.includes(setName)),
-    ...undeclaredSets,
+    ...declaredOrder.filter((setName) => actualSets.includes(setName)),
+    ...undeclaredSets.filter((setName) => !declaredOrder.includes(setName)),
   ];
 
   return {
