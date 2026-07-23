@@ -14,13 +14,21 @@ function run(command, args) {
   }
 }
 
-export async function buildAll() {
+async function buildAllOnce() {
   run('npx', ['style-dictionary', 'build', '--config', 'style-dictionary.config.js']);
   const theme = await buildTheme();
   const guidelines = generateMakeGuidelines();
   console.log(
     `Built variables.css + theme.css (${theme.blockCount} theme blocks) + guidelines.md (${guidelines.axisGroups.length} axes)`,
   );
+}
+
+let buildChain = Promise.resolve();
+
+export function buildAll() {
+  const next = buildChain.then(() => buildAllOnce());
+  buildChain = next.catch(() => {});
+  return next;
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

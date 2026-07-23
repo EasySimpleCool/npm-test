@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { describe, it } from 'node:test';
+import { describe, it, before } from 'node:test';
 import { createRequire } from 'node:module';
 import { buildAll } from '../scripts/build-all.mjs';
 
@@ -15,8 +15,11 @@ const THEME_PATH = join(ROOT, 'dist/theme.css');
 const GUIDELINES_PATH = join(ROOT, 'dist/guidelines.md');
 
 describe('make import smoke test', () => {
-  it('package exports resolve to CSS files on disk', async () => {
+  before(async () => {
     await buildAll();
+  });
+
+  it('package exports resolve to CSS files on disk', () => {
     const pkg = require(join(ROOT, 'package.json'));
 
     assert.equal(pkg.exports['./variables.css'], './dist/variables.css');
@@ -34,8 +37,7 @@ describe('make import smoke test', () => {
     assert.match(theme, /\[data-elevation="flat"\]/);
   });
 
-  it('guidelines document both stylesheets and font loading for Make', async () => {
-    await buildAll();
+  it('guidelines document both stylesheets and font loading for Make', () => {
     const guidelines = readFileSync(GUIDELINES_PATH, 'utf8');
 
     assert.match(guidelines, /variables\.css/);
