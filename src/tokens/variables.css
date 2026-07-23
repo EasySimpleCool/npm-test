@@ -43,7 +43,7 @@
   --ds-spacing-2xl: 48px;
   --ds-spacing-3xl: 64px;
   --ds-spacing-4xl: 96px;
-  --ds-fontFamilies-display: Playfair;
+  --ds-fontFamilies-display: 'Playfair Display';
   --ds-fontFamilies-body: Inter;
   --ds-fontFamilies-mono: 'Space Mono';
   --ds-fontWeights-regular: 400;
@@ -76,12 +76,12 @@
   --ds-borderRadius-input: 14px;
   --ds-borderRadius-overlay: 6px;
   --ds-borderRadius-card: 12px;
-  --ds-type-display-hero: 400 168px/0.9 Playfair;
-  --ds-type-display-xl: 400 118px/0.9 Playfair;
-  --ds-type-display-lg: 400 100px/0.9 Playfair;
-  --ds-type-display-md: 400 72px/1.1 Playfair;
-  --ds-type-display-sm: 400 44px/1 Playfair;
-  --ds-type-display-xs: 400 28px/1 Playfair;
+  --ds-type-display-hero: 400 168px/0.9 'Playfair Display';
+  --ds-type-display-xl: 400 118px/0.9 'Playfair Display';
+  --ds-type-display-lg: 400 100px/0.9 'Playfair Display';
+  --ds-type-display-md: 400 72px/1.1 'Playfair Display';
+  --ds-type-display-sm: 400 44px/1 'Playfair Display';
+  --ds-type-display-xs: 400 28px/1 'Playfair Display';
   --ds-type-body-lg: 400 18px/1.55 Inter;
   --ds-type-body-md: 400 16px/1.4 Inter;
   --ds-type-body-sm: 400 13px/1.4 Inter;

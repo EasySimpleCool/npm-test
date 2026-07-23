@@ -49,7 +49,7 @@ export const spacing = {
 } as const;
 
 export const fontFamilies = {
-  "display": "Playfair",
+  "display": "'Playfair Display'",
   "body": "Inter",
   "mono": "'Space Mono'"
 } as const;
@@ -101,7 +101,7 @@ export const radii = {
 
 export const typography = {
   fontFamily: {
-    display: `'Playfair', sans-serif`,
+    display: `''Playfair Display'', sans-serif`,
     body: `'Inter', sans-serif`,
     mono: `''Space Mono'', monospace`,
   },
