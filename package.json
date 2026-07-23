@@ -23,7 +23,7 @@
   "scripts": {
     "build": "npm run build:tokens",
     "build:tokens": "node scripts/build-all.mjs",
-    "test": "node --test test/**/*.test.mjs",
+    "test": "node scripts/run-tests.mjs",
     "validate:tokens": "node scripts/validate-tokens.mjs",
     "prepublishOnly": "npm run build"
   },
