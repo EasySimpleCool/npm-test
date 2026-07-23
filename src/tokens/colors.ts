@@ -49,9 +49,11 @@ export const spacing = {
 } as const;
 
 export const fontFamilies = {
-  "display": "'Playfair Display'",
-  "body": "Inter",
-  "mono": "'Space Mono'"
+  "display": "'Space Grotesk'",
+  "body": "'IBM Plex Mono'",
+  "mono": "'Space Mono'",
+  "space-grotesk": "'Space Grotesk'",
+  "ibm-plex": "'IBM Plex Mono'"
 } as const;
 
 export const fontWeights = {
@@ -101,8 +103,8 @@ export const radii = {
 
 export const typography = {
   fontFamily: {
-    display: `''Playfair Display'', sans-serif`,
-    body: `'Inter', sans-serif`,
+    display: `''Space Grotesk'', sans-serif`,
+    body: `''IBM Plex Mono'', sans-serif`,
     mono: `''Space Mono'', monospace`,
   },
   sizes: fontSizes,
