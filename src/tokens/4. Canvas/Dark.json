@@ -1,0 +1,85 @@
+{
+  "ds": {
+    "color": {
+      "surface": {
+        "secondary": {
+          "value": "#0f0c08",
+          "type": "color"
+        },
+        "primary": {
+          "value": "#1a1510",
+          "type": "color"
+        },
+        "hover": {
+          "value": "#241e18",
+          "type": "color"
+        },
+        "tertiary": {
+          "value": "#2e261e",
+          "type": "color"
+        }
+      },
+      "ink": {
+        "value": "#f7f3ec",
+        "type": "color"
+      },
+      "text": {
+        "muted": {
+          "value": "rgba(247, 243, 236, 0.65)",
+          "type": "color"
+        },
+        "subtle": {
+          "value": "rgba(247, 243, 236, 0.50)",
+          "type": "color"
+        },
+        "body": {
+          "value": "rgba(247, 243, 236, 0.82)",
+          "type": "color"
+        }
+      },
+      "border": {
+        "default": {
+          "value": "rgba(247, 243, 236, 0.22)",
+          "type": "color"
+        },
+        "subtle": {
+          "value": "rgba(247, 243, 236, 0.12)",
+          "type": "color"
+        },
+        "strong": {
+          "value": "rgba(247, 243, 236, 0.35)",
+          "type": "color"
+        }
+      }
+    },
+    "button": {
+      "ghost": {
+        "color": {
+          "fg": {
+            "value": "{ds.color.ink}",
+            "type": "color"
+          },
+          "bg-hover": {
+            "value": "rgba(247, 243, 236, 0.08)",
+            "type": "color"
+          }
+        },
+        "border": {
+          "value": "rgba(247, 243, 236, 0.25)",
+          "type": "color"
+        }
+      }
+    }
+  },
+  "sa": {
+    "surface-elevated": {
+      "value": "#1e1914",
+      "type": "color"
+    },
+    "surface-glass": {
+      "value": "rgba(26, 21, 16, 0.88)",
+      "type": "color",
+      "description": "Resolved from color-mix(dark canvas 88%) for Figma Variables"
+    }
+  }
+}

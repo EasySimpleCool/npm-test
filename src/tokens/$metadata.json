@@ -1,6 +1,22 @@
 {
   "tokenSetOrder": [
-    "global",
-    "button"
+    "0. Core/Default",
+    "1. Accent/Gold",
+    "1. Accent/Pink",
+    "1. Accent/Purple",
+    "1. Accent/Teal",
+    "1. Accent/Terracotta",
+    "2. Type/Editorial",
+    "2. Type/Mono",
+    "2. Type/Product",
+    "3. Radius/Soft",
+    "3. Radius/Square",
+    "4. Canvas/Cool",
+    "4. Canvas/Dark",
+    "5. Elevation/Dramatic",
+    "5. Elevation/Flat",
+    "6. Brand/Aware",
+    "7. Components/Button",
+    "$figma-collections"
   ]
 }

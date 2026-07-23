@@ -1,0 +1,444 @@
+{
+  "button": {
+    "primary": {
+      "color": {
+        "fg": {
+          "value": "#ffffff",
+          "type": "color",
+          "description": "Compiles to --ds-button-primary-color-fg"
+        },
+        "bg": {
+          "value": "#7aab54",
+          "type": "color",
+          "description": "Compiles to --ds-button-primary-color-bg"
+        },
+        "bg-hover": {
+          "value": "#ad005f",
+          "type": "color",
+          "description": "Compiles to --ds-button-primary-color-bg-hover"
+        }
+      },
+      "radius": {
+        "value": "28px",
+        "type": "borderRadius",
+        "description": "Compiles to --ds-button-primary-radius"
+      },
+      "label": {
+        "value": {
+          "fontFamily": "{fontFamilies.body}",
+          "fontWeight": "{fontWeights.semibold}",
+          "fontSize": "16px",
+          "lineHeight": "1",
+          "letterSpacing": "0",
+          "paragraphSpacing": "0",
+          "textDecoration": "none",
+          "textCase": "none",
+          "paragraphIndent": "0"
+        },
+        "type": "typography",
+        "description": "Compiles to --ds-type-ui-button; apply to text layer"
+      },
+      "label-sm": {
+        "value": {
+          "fontFamily": "{fontFamilies.body}",
+          "fontWeight": "{fontWeights.semibold}",
+          "fontSize": "13px",
+          "lineHeight": "1",
+          "letterSpacing": "0",
+          "paragraphSpacing": "0",
+          "textDecoration": "none",
+          "textCase": "none",
+          "paragraphIndent": "0"
+        },
+        "type": "typography",
+        "description": "Compiles to --ds-type-ui-button-sm; apply to text layer"
+      },
+      "default": {
+        "value": {
+          "fill": "{button.primary.color.bg}",
+          "borderRadius": "{button.primary.radius}",
+          "verticalPadding": "14px",
+          "horizontalPadding": "28px"
+        },
+        "type": "composition",
+        "description": "btn-primary — hero, premiere CTA"
+      },
+      "hover": {
+        "value": {
+          "fill": "{button.primary.color.bg-hover}"
+        },
+        "type": "composition"
+      },
+      "sm": {
+        "value": {
+          "fill": "{button.primary.color.bg}",
+          "borderRadius": "20px",
+          "verticalPadding": "9px",
+          "horizontalPadding": "18px"
+        },
+        "type": "composition",
+        "description": "btn-primary btn-primary--sm — nav, coach, sticky bar"
+      },
+      "full": {
+        "value": {
+          "fill": "{button.primary.color.bg}",
+          "borderRadius": "{button.primary.radius}",
+          "verticalPadding": "14px",
+          "horizontalPadding": "28px"
+        },
+        "type": "composition",
+        "description": "btn-primary btn-primary--full — notify modal; set width fill in Figma"
+      }
+    },
+    "ghost": {
+      "color": {
+        "fg": {
+          "value": "#191512",
+          "type": "color",
+          "description": "Compiles to --ds-button-ghost-color-fg"
+        },
+        "bg": {
+          "value": "rgba(0, 0, 0, 0)",
+          "type": "color",
+          "description": "Compiles to --ds-button-ghost-color-bg"
+        },
+        "bg-hover": {
+          "value": "rgba(25, 21, 18, 0.05)",
+          "type": "color",
+          "description": "Compiles to --ds-button-ghost-color-bg-hover"
+        }
+      },
+      "border": {
+        "value": "rgba(25, 21, 18, 0.25)",
+        "type": "color",
+        "description": "Compiles to --ds-button-ghost-border"
+      },
+      "radius": {
+        "value": "16px",
+        "type": "borderRadius",
+        "description": "Compiles to --ds-button-ghost-radius"
+      },
+      "default": {
+        "value": {
+          "fill": "{button.ghost.color.bg}",
+          "border": "{button.ghost.border}",
+          "borderWidth": "1.5px",
+          "borderRadius": "{button.ghost.radius}",
+          "verticalPadding": "13px",
+          "horizontalPadding": "24px"
+        },
+        "type": "composition",
+        "description": "btn-secondary — hero secondary CTA"
+      },
+      "hover": {
+        "value": {
+          "fill": "{button.ghost.color.bg-hover}"
+        },
+        "type": "composition"
+      }
+    },
+    "overlay": {
+      "color": {
+        "fg": {
+          "value": "#ffffff",
+          "type": "color",
+          "description": "Compiles to --ds-button-overlay-color-fg"
+        },
+        "bg": {
+          "value": "rgba(0, 0, 0, 0.65)",
+          "type": "color",
+          "description": "Compiles to --ds-button-overlay-color-bg"
+        },
+        "bg-hover": {
+          "value": "rgba(0, 0, 0, 0.8)",
+          "type": "color",
+          "description": "Compiles to --ds-button-overlay-color-bg-hover"
+        }
+      },
+      "radius": {
+        "value": "6px",
+        "type": "borderRadius",
+        "description": "Compiles to --ds-button-overlay-radius"
+      }
+    },
+    "outline-mono-sm": {
+      "default": {
+        "value": {
+          "fill": "rgba(0, 0, 0, 0)",
+          "border": "{color.border.default}",
+          "borderWidth": "1px",
+          "borderRadius": "{borderRadius.pill-sm}",
+          "verticalPadding": "6px",
+          "horizontalPadding": "12px"
+        },
+        "type": "composition",
+        "description": "h-borderdark-c — skip intro, FAQ film, WATCH MORE link"
+      },
+      "label": {
+        "value": {
+          "fontFamily": "{fontFamilies.mono}",
+          "fontWeight": "{fontWeights.regular}",
+          "fontSize": "11px",
+          "lineHeight": "1.4",
+          "letterSpacing": "0",
+          "paragraphSpacing": "0",
+          "textDecoration": "none",
+          "textCase": "none",
+          "paragraphIndent": "0"
+        },
+        "type": "typography"
+      }
+    },
+    "outline-md": {
+      "default": {
+        "value": {
+          "fill": "rgba(0, 0, 0, 0)",
+          "border": "rgba(25, 21, 18, 0.2)",
+          "borderWidth": "1px",
+          "borderRadius": "24px",
+          "verticalPadding": "11px",
+          "horizontalPadding": "11px"
+        },
+        "type": "composition",
+        "description": "h-borderdark — theater up next (light context)"
+      },
+      "on-dark": {
+        "value": {
+          "fill": "rgba(0, 0, 0, 0)",
+          "border": "rgba(255, 255, 255, 0.55)",
+          "borderWidth": "1px",
+          "borderRadius": "26px",
+          "verticalPadding": "12px",
+          "horizontalPadding": "22px"
+        },
+        "type": "composition",
+        "description": "h-borderdark — quiz retake on gradient"
+      }
+    },
+    "quiz-answer": {
+      "default": {
+        "value": {
+          "fill": "{color.surface.secondary}",
+          "border": "{color.border.subtle}",
+          "borderWidth": "1px",
+          "borderRadius": "{borderRadius.input}",
+          "verticalPadding": "15px",
+          "horizontalPadding": "20px"
+        },
+        "type": "composition",
+        "description": "h-answer — quiz option buttons"
+      }
+    },
+    "chip": {
+      "default": {
+        "value": {
+          "fill": "rgba(0, 0, 0, 0)",
+          "border": "{color.border.default}",
+          "borderWidth": "1px",
+          "borderRadius": "20px",
+          "verticalPadding": "8px",
+          "horizontalPadding": "14px"
+        },
+        "type": "composition",
+        "description": "h-chip — coach suggestion chips"
+      }
+    },
+    "row-outline": {
+      "default": {
+        "value": {
+          "fill": "rgba(0, 0, 0, 0)",
+          "border": "rgba(25, 21, 18, 0.3)",
+          "borderWidth": "1px",
+          "borderRadius": "18px",
+          "verticalPadding": "8px",
+          "horizontalPadding": "14px"
+        },
+        "type": "composition",
+        "description": "h-row — coach reply watch film"
+      }
+    },
+    "solid-light": {
+      "default": {
+        "value": {
+          "fill": "#fffdf9",
+          "borderRadius": "26px",
+          "verticalPadding": "13px",
+          "horizontalPadding": "26px"
+        },
+        "type": "composition",
+        "description": "h-op — quiz result CTA on dark gradient"
+      }
+    },
+    "ring-icon": {
+      "default": {
+        "value": {
+          "fill": "rgba(0, 0, 0, 0)",
+          "border": "rgba(255, 255, 255, 0.5)",
+          "borderWidth": "1px",
+          "borderRadius": "50%",
+          "width": "36px",
+          "height": "36px"
+        },
+        "type": "composition",
+        "description": "h-ring — cast prev/next on dark overlay"
+      }
+    },
+    "ring-pill": {
+      "default": {
+        "value": {
+          "fill": "rgba(0, 0, 0, 0)",
+          "border": "rgba(255, 255, 255, 0.5)",
+          "borderWidth": "1px",
+          "borderRadius": "16px",
+          "verticalPadding": "8px",
+          "horizontalPadding": "14px"
+        },
+        "type": "composition",
+        "description": "h-ring — cast skip on dark overlay"
+      }
+    },
+    "toggle": {
+      "default": {
+        "value": {
+          "fill": "rgba(0, 0, 0, 0)",
+          "border": "rgba(25, 21, 18, 0.3)",
+          "borderWidth": "1px",
+          "borderRadius": "24px",
+          "verticalPadding": "12px",
+          "horizontalPadding": "12px"
+        },
+        "type": "composition",
+        "description": "Mark as watched — default state"
+      },
+      "active": {
+        "value": {
+          "fill": "{color.ink}",
+          "border": "rgba(25, 21, 18, 0.3)",
+          "borderWidth": "1px",
+          "borderRadius": "24px",
+          "verticalPadding": "12px",
+          "horizontalPadding": "12px"
+        },
+        "type": "composition",
+        "description": "Mark as watched — watched state"
+      }
+    },
+    "close-dark": {
+      "default": {
+        "value": {
+          "fill": "rgba(15, 12, 8, 0.65)",
+          "borderRadius": "50%",
+          "width": "36px",
+          "height": "36px"
+        },
+        "type": "composition",
+        "description": "Theater modal close button"
+      }
+    },
+    "close-light": {
+      "default": {
+        "value": {
+          "fill": "rgba(0, 0, 0, 0)",
+          "borderRadius": "0"
+        },
+        "type": "composition",
+        "description": "Notify modal close — icon only, no frame fill"
+      }
+    },
+    "action-pill": {
+      "default": {
+        "value": {
+          "fill": "{color.ink}",
+          "borderRadius": "16px",
+          "verticalPadding": "6px",
+          "horizontalPadding": "12px"
+        },
+        "type": "composition",
+        "description": "Dark CTA span beside outline buttons in FAQ/credits"
+      }
+    }
+  },
+  "color": {
+    "ink": {
+      "value": "#191512",
+      "type": "color",
+      "description": "Compiles to --ds-color-ink"
+    },
+    "surface": {
+      "secondary": {
+        "value": "#f7f3ec",
+        "type": "color",
+        "description": "Compiles to --ds-color-surface-secondary"
+      },
+      "primary": {
+        "value": "#ffffff",
+        "type": "color",
+        "description": "Compiles to --ds-color-surface-primary"
+      }
+    },
+    "text": {
+      "muted": {
+        "value": "rgba(25, 21, 18, 0.65)",
+        "type": "color",
+        "description": "Compiles to --ds-color-text-muted"
+      }
+    },
+    "border": {
+      "default": {
+        "value": "rgba(25, 21, 18, 0.25)",
+        "type": "color",
+        "description": "Compiles to --ds-color-border-default"
+      },
+      "subtle": {
+        "value": "rgba(25, 21, 18, 0.14)",
+        "type": "color",
+        "description": "Compiles to --ds-color-border-subtle"
+      }
+    }
+  },
+  "borderRadius": {
+    "pill": {
+      "value": "28px",
+      "type": "borderRadius",
+      "description": "Compiles to --ds-borderRadius-pill"
+    },
+    "pill-sm": {
+      "value": "16px",
+      "type": "borderRadius",
+      "description": "Compiles to --ds-borderRadius-pill-sm"
+    },
+    "input": {
+      "value": "14px",
+      "type": "borderRadius",
+      "description": "Compiles to --ds-borderRadius-input"
+    }
+  },
+  "fontFamilies": {
+    "body": {
+      "value": "Montserrat",
+      "type": "fontFamilies"
+    },
+    "mono": {
+      "value": "Space Mono",
+      "type": "fontFamilies"
+    },
+    "space-grotesk": {
+      "value": "Space Grotesk",
+      "type": "fontFamilies"
+    }
+  },
+  "fontWeights": {
+    "regular": {
+      "value": "400",
+      "type": "fontWeights"
+    },
+    "medium": {
+      "value": "500",
+      "type": "fontWeights"
+    },
+    "semibold": {
+      "value": "600",
+      "type": "fontWeights"
+    }
+  }
+}

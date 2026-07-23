@@ -1,0 +1,21 @@
+{
+  "sa": {
+    "font": {
+      "display": {
+        "value": "Playfair Display",
+        "type": "fontFamilies",
+        "description": "--sa-font-display"
+      },
+      "label": {
+        "value": "IBM Plex Mono",
+        "type": "fontFamilies",
+        "description": "--sa-font-label"
+      },
+      "body": {
+        "value": "Inter",
+        "type": "fontFamilies",
+        "description": "--sa-font-body"
+      }
+    }
+  }
+}

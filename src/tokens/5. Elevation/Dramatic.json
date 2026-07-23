@@ -1,0 +1,59 @@
+{
+  "sa": {
+    "shadow": {
+      "sm": {
+        "value": {
+          "x": "0",
+          "y": "8",
+          "blur": "24",
+          "spread": "0",
+          "color": "rgba(0, 0, 0, 0.18)",
+          "type": "dropShadow"
+        },
+        "type": "boxShadow",
+        "description": "--sa-shadow-sm"
+      },
+      "md": {
+        "value": {
+          "x": "0",
+          "y": "32",
+          "blur": "80",
+          "spread": "0",
+          "color": "rgba(0, 0, 0, 0.28)",
+          "type": "dropShadow"
+        },
+        "type": "boxShadow",
+        "description": "--sa-shadow-md"
+      },
+      "lg": {
+        "value": {
+          "x": "0",
+          "y": "40",
+          "blur": "100",
+          "spread": "0",
+          "color": "rgba(0, 0, 0, 0.55)",
+          "type": "dropShadow"
+        },
+        "type": "boxShadow",
+        "description": "--sa-shadow-lg"
+      },
+      "play": {
+        "value": {
+          "x": "0",
+          "y": "16",
+          "blur": "48",
+          "spread": "0",
+          "color": "rgba(0, 0, 0, 0.45)",
+          "type": "dropShadow"
+        },
+        "type": "boxShadow",
+        "description": "--sa-shadow-play"
+      }
+    },
+    "hover-lift": {
+      "value": "-8px",
+      "type": "dimension",
+      "description": "--sa-hover-lift"
+    }
+  }
+}

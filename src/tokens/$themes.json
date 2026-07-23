@@ -1,0 +1,206 @@
+[
+  {
+    "id": "b0010000000000000000000000000001",
+    "name": "Second Act",
+    "group": "brand",
+    "selectedTokenSets": {
+      "0. Core/Default": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "b0010000000000000000000000000002",
+    "name": "Aware",
+    "group": "brand",
+    "selectedTokenSets": {
+      "0. Core/Default": "source",
+      "6. Brand/Aware": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "a0010000000000000000000000000001",
+    "name": "green",
+    "group": "accent",
+    "selectedTokenSets": {
+      "0. Core/Default": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "a0010000000000000000000000000002",
+    "name": "pink",
+    "group": "accent",
+    "selectedTokenSets": {
+      "0. Core/Default": "source",
+      "1. Accent/Pink": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "a0010000000000000000000000000003",
+    "name": "teal",
+    "group": "accent",
+    "selectedTokenSets": {
+      "0. Core/Default": "source",
+      "1. Accent/Teal": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "a0010000000000000000000000000004",
+    "name": "purple",
+    "group": "accent",
+    "selectedTokenSets": {
+      "0. Core/Default": "source",
+      "1. Accent/Purple": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "a0010000000000000000000000000005",
+    "name": "gold",
+    "group": "accent",
+    "selectedTokenSets": {
+      "0. Core/Default": "source",
+      "1. Accent/Gold": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "a0010000000000000000000000000006",
+    "name": "terracotta",
+    "group": "accent",
+    "selectedTokenSets": {
+      "0. Core/Default": "source",
+      "1. Accent/Terracotta": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "t0010000000000000000000000000001",
+    "name": "cinematic",
+    "group": "type",
+    "selectedTokenSets": {
+      "0. Core/Default": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "t0010000000000000000000000000002",
+    "name": "editorial",
+    "group": "type",
+    "selectedTokenSets": {
+      "0. Core/Default": "source",
+      "2. Type/Editorial": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "t0010000000000000000000000000003",
+    "name": "product",
+    "group": "type",
+    "selectedTokenSets": {
+      "0. Core/Default": "source",
+      "2. Type/Product": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "t0010000000000000000000000000004",
+    "name": "mono",
+    "group": "type",
+    "selectedTokenSets": {
+      "0. Core/Default": "source",
+      "2. Type/Mono": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "r0010000000000000000000000000001",
+    "name": "round",
+    "group": "radius",
+    "selectedTokenSets": {
+      "0. Core/Default": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "r0010000000000000000000000000002",
+    "name": "soft",
+    "group": "radius",
+    "selectedTokenSets": {
+      "0. Core/Default": "source",
+      "3. Radius/Soft": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "r0010000000000000000000000000003",
+    "name": "square",
+    "group": "radius",
+    "selectedTokenSets": {
+      "0. Core/Default": "source",
+      "3. Radius/Square": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "c0010000000000000000000000000001",
+    "name": "warm",
+    "group": "canvas",
+    "selectedTokenSets": {
+      "0. Core/Default": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "c0010000000000000000000000000002",
+    "name": "cool",
+    "group": "canvas",
+    "selectedTokenSets": {
+      "0. Core/Default": "source",
+      "4. Canvas/Cool": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "c0010000000000000000000000000003",
+    "name": "dark",
+    "group": "canvas",
+    "selectedTokenSets": {
+      "0. Core/Default": "source",
+      "4. Canvas/Dark": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "e0010000000000000000000000000001",
+    "name": "soft",
+    "group": "elevation",
+    "selectedTokenSets": {
+      "0. Core/Default": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "e0010000000000000000000000000002",
+    "name": "flat",
+    "group": "elevation",
+    "selectedTokenSets": {
+      "0. Core/Default": "source",
+      "5. Elevation/Flat": "enabled",
+      "7. Components/Button": "source"
+    }
+  },
+  {
+    "id": "e0010000000000000000000000000003",
+    "name": "dramatic",
+    "group": "elevation",
+    "selectedTokenSets": {
+      "0. Core/Default": "source",
+      "5. Elevation/Dramatic": "enabled",
+      "7. Components/Button": "source"
+    }
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "sa": {
+    "accent": {
+      "value": "{colour.accent.terracotta}",
+      "type": "color",
+      "description": "--sa-accent"
+    },
+    "accent-deep": {
+      "value": "{colour.accent.terracotta-deep}",
+      "type": "color",
+      "description": "--sa-accent-deep"
+    }
+  },
+  "ds": {
+    "button": {
+      "primary": {
+        "color": {
+          "bg": {
+            "value": "{sa.accent}",
+            "type": "color"
+          },
+          "bg-hover": {
+            "value": "{sa.accent-deep}",
+            "type": "color"
+          }
+        }
+      }
+    },
+    "color": {
+      "text": {
+        "accent": {
+          "value": "{sa.accent}",
+          "type": "color"
+        }
+      }
+    }
+  }
+}

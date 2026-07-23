@@ -1,0 +1,59 @@
+{
+  "sa": {
+    "shadow": {
+      "sm": {
+        "value": {
+          "x": "0",
+          "y": "0",
+          "blur": "0",
+          "spread": "0",
+          "color": "rgba(0, 0, 0, 0)",
+          "type": "dropShadow"
+        },
+        "type": "boxShadow",
+        "description": "--sa-shadow-sm (flat)"
+      },
+      "md": {
+        "value": {
+          "x": "0",
+          "y": "0",
+          "blur": "0",
+          "spread": "0",
+          "color": "rgba(0, 0, 0, 0)",
+          "type": "dropShadow"
+        },
+        "type": "boxShadow",
+        "description": "--sa-shadow-md (flat)"
+      },
+      "lg": {
+        "value": {
+          "x": "0",
+          "y": "0",
+          "blur": "0",
+          "spread": "0",
+          "color": "rgba(0, 0, 0, 0)",
+          "type": "dropShadow"
+        },
+        "type": "boxShadow",
+        "description": "--sa-shadow-lg (flat)"
+      },
+      "play": {
+        "value": {
+          "x": "0",
+          "y": "0",
+          "blur": "0",
+          "spread": "0",
+          "color": "rgba(0, 0, 0, 0)",
+          "type": "dropShadow"
+        },
+        "type": "boxShadow",
+        "description": "--sa-shadow-play (flat)"
+      }
+    },
+    "hover-lift": {
+      "value": "0",
+      "type": "dimension",
+      "description": "--sa-hover-lift"
+    }
+  }
+}

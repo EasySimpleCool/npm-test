@@ -1,0 +1,67 @@
+{
+  "ds": {
+    "color": {
+      "surface": {
+        "secondary": {
+          "value": "#f4f4f6",
+          "type": "color"
+        },
+        "primary": {
+          "value": "#ffffff",
+          "type": "color"
+        },
+        "hover": {
+          "value": "#ececef",
+          "type": "color"
+        },
+        "tertiary": {
+          "value": "#e4e4e8",
+          "type": "color"
+        }
+      },
+      "ink": {
+        "value": "#121214",
+        "type": "color"
+      },
+      "text": {
+        "muted": {
+          "value": "rgba(18, 18, 20, 0.60)",
+          "type": "color"
+        },
+        "subtle": {
+          "value": "rgba(18, 18, 20, 0.50)",
+          "type": "color"
+        },
+        "body": {
+          "value": "rgba(18, 18, 20, 0.82)",
+          "type": "color"
+        }
+      },
+      "border": {
+        "default": {
+          "value": "rgba(18, 18, 20, 0.22)",
+          "type": "color"
+        },
+        "subtle": {
+          "value": "rgba(18, 18, 20, 0.10)",
+          "type": "color"
+        },
+        "strong": {
+          "value": "rgba(18, 18, 20, 0.35)",
+          "type": "color"
+        }
+      }
+    }
+  },
+  "sa": {
+    "surface-elevated": {
+      "value": "#ffffff",
+      "type": "color"
+    },
+    "surface-glass": {
+      "value": "rgba(244, 244, 246, 0.88)",
+      "type": "color",
+      "description": "Resolved from color-mix(cool canvas 88%) for Figma Variables"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "sa": {
+    "accent": {
+      "value": "{colour.accent.purple}",
+      "type": "color",
+      "description": "--sa-accent"
+    },
+    "accent-deep": {
+      "value": "{colour.accent.purple-deep}",
+      "type": "color",
+      "description": "--sa-accent-deep"
+    }
+  },
+  "ds": {
+    "button": {
+      "primary": {
+        "color": {
+          "bg": {
+            "value": "{sa.accent}",
+            "type": "color"
+          },
+          "bg-hover": {
+            "value": "{sa.accent-deep}",
+            "type": "color"
+          }
+        }
+      }
+    },
+    "color": {
+      "text": {
+        "accent": {
+          "value": "{sa.accent}",
+          "type": "color"
+        }
+      }
+    }
+  }
+}

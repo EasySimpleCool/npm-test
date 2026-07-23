@@ -1,0 +1,46 @@
+{
+  "ds": {
+    "button": {
+      "primary": {
+        "radius": {
+          "value": "8px",
+          "type": "borderRadius",
+          "description": "--ds-button-primary-radius"
+        }
+      },
+      "ghost": {
+        "radius": {
+          "value": "8px",
+          "type": "borderRadius",
+          "description": "--ds-button-ghost-radius"
+        }
+      }
+    },
+    "borderRadius": {
+      "pill": {
+        "value": "8px",
+        "type": "borderRadius"
+      },
+      "pill-sm": {
+        "value": "8px",
+        "type": "borderRadius"
+      },
+      "input": {
+        "value": "8px",
+        "type": "borderRadius"
+      }
+    }
+  },
+  "sa": {
+    "radius-card": {
+      "value": "8px",
+      "type": "borderRadius",
+      "description": "--sa-radius-card"
+    },
+    "radius-modal": {
+      "value": "8px",
+      "type": "borderRadius",
+      "description": "--sa-radius-modal"
+    }
+  }
+}
