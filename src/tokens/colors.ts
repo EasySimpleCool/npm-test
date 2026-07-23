@@ -49,7 +49,7 @@ export const spacing = {
 } as const;
 
 export const fontFamilies = {
-  "display": "Kablammo",
+  "display": "Inter",
   "body": "Inter",
   "mono": "'Space Mono'",
   "space-grotesk": "'Space Grotesk'",
@@ -106,7 +106,7 @@ export const radii = {
 
 export const typography = {
   fontFamily: {
-    display: `'Kablammo', sans-serif`,
+    display: `'Inter', sans-serif`,
     body: `'Inter', sans-serif`,
     mono: `''Space Mono'', monospace`,
   },
