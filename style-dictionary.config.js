@@ -87,10 +87,6 @@ function parseKey(key) {
   return key.replace(/^\{|\}$/g, '').split('.');
 }
 
-function toKebab(str) {
-  return str.replace(/([A-Z])/g, '-$1').toLowerCase();
-}
-
 function withPx(value) {
   if (typeof value !== 'string') return `${value}px`;
   if (
@@ -112,8 +108,8 @@ function isColorValue(value) {
   );
 }
 
-function tokenToCssVar(parts) {
-  return `--ds-${parts.map(toKebab).join('-')}`;
+function tokenKeyToCssVar(key) {
+  return `--ds-${key}`;
 }
 
 function groupTokensByKey(dictionary) {
@@ -206,7 +202,7 @@ StyleDictionary.registerFormat({
     let out = `${generatedCssBanner}\n\n:root {\n`;
 
     for (const [key, { value, type }] of Object.entries(global)) {
-      const varName = `--ds-${key}`;
+      const varName = tokenKeyToCssVar(key);
       if (type === 'fontSizes' || type === 'spacing' || type === 'borderRadius') {
         out += `  ${varName}: ${withPx(value)};\n`;
       } else if (type === 'fontFamilies') {
@@ -224,7 +220,7 @@ StyleDictionary.registerFormat({
     out += `  --ds-font-mono: var(--ds-fontFamilies-mono);\n`;
 
     for (const [key, { value, type }] of Object.entries(comp)) {
-      const varName = `--ds-${key}`;
+      const varName = tokenKeyToCssVar(key);
       const val =
         type === 'fontSizes' || type === 'spacing' || type === 'borderRadius'
           ? withPx(value)
@@ -248,8 +244,8 @@ StyleDictionary.registerFormat({
       const name = key.replace('fontSize-display-', '');
       out += `.ds-text-display-${name} {
   font-family: var(--ds-font-display);
-  font-size: var(--ds-font-size-display-${name});
-  line-height: var(--ds-line-height-display);
+  font-size: var(${tokenKeyToCssVar(`fontSize-display-${name}`)});
+  line-height: var(${tokenKeyToCssVar('lineHeight-display')});
   text-transform: uppercase;
 }\n\n`;
     }
@@ -259,8 +255,8 @@ StyleDictionary.registerFormat({
       const name = key.replace('fontSize-body-', '');
       out += `.ds-text-body-${name} {
   font-family: var(--ds-font-body);
-  font-size: var(--ds-font-size-body-${name});
-  line-height: var(--ds-line-height-body);
+  font-size: var(${tokenKeyToCssVar(`fontSize-body-${name}`)});
+  line-height: var(${tokenKeyToCssVar('lineHeight-body')});
 }\n\n`;
     }
 
@@ -269,8 +265,8 @@ StyleDictionary.registerFormat({
       const name = key.replace('fontSize-mono-', '');
       out += `.ds-text-mono-${name} {
   font-family: var(--ds-font-mono);
-  font-size: var(--ds-font-size-mono-${name});
-  line-height: var(--ds-line-height-body);
+  font-size: var(${tokenKeyToCssVar(`fontSize-mono-${name}`)});
+  line-height: var(${tokenKeyToCssVar('lineHeight-body')});
 }\n\n`;
     }
 

@@ -4,85 +4,85 @@
 
 .ds-text-display-hero {
   font-family: var(--ds-font-display);
-  font-size: var(--ds-font-size-display-hero);
-  line-height: var(--ds-line-height-display);
+  font-size: var(--ds-fontSize-display-hero);
+  line-height: var(--ds-lineHeight-display);
   text-transform: uppercase;
 }
 
 .ds-text-display-xl {
   font-family: var(--ds-font-display);
-  font-size: var(--ds-font-size-display-xl);
-  line-height: var(--ds-line-height-display);
+  font-size: var(--ds-fontSize-display-xl);
+  line-height: var(--ds-lineHeight-display);
   text-transform: uppercase;
 }
 
 .ds-text-display-lg {
   font-family: var(--ds-font-display);
-  font-size: var(--ds-font-size-display-lg);
-  line-height: var(--ds-line-height-display);
+  font-size: var(--ds-fontSize-display-lg);
+  line-height: var(--ds-lineHeight-display);
   text-transform: uppercase;
 }
 
 .ds-text-display-md {
   font-family: var(--ds-font-display);
-  font-size: var(--ds-font-size-display-md);
-  line-height: var(--ds-line-height-display);
+  font-size: var(--ds-fontSize-display-md);
+  line-height: var(--ds-lineHeight-display);
   text-transform: uppercase;
 }
 
 .ds-text-display-sm {
   font-family: var(--ds-font-display);
-  font-size: var(--ds-font-size-display-sm);
-  line-height: var(--ds-line-height-display);
+  font-size: var(--ds-fontSize-display-sm);
+  line-height: var(--ds-lineHeight-display);
   text-transform: uppercase;
 }
 
 .ds-text-display-xs {
   font-family: var(--ds-font-display);
-  font-size: var(--ds-font-size-display-xs);
-  line-height: var(--ds-line-height-display);
+  font-size: var(--ds-fontSize-display-xs);
+  line-height: var(--ds-lineHeight-display);
   text-transform: uppercase;
 }
 
 .ds-text-body-lg {
   font-family: var(--ds-font-body);
-  font-size: var(--ds-font-size-body-lg);
-  line-height: var(--ds-line-height-body);
+  font-size: var(--ds-fontSize-body-lg);
+  line-height: var(--ds-lineHeight-body);
 }
 
 .ds-text-body-md {
   font-family: var(--ds-font-body);
-  font-size: var(--ds-font-size-body-md);
-  line-height: var(--ds-line-height-body);
+  font-size: var(--ds-fontSize-body-md);
+  line-height: var(--ds-lineHeight-body);
 }
 
 .ds-text-body-sm {
   font-family: var(--ds-font-body);
-  font-size: var(--ds-font-size-body-sm);
-  line-height: var(--ds-line-height-body);
+  font-size: var(--ds-fontSize-body-sm);
+  line-height: var(--ds-lineHeight-body);
 }
 
 .ds-text-body-caption {
   font-family: var(--ds-font-body);
-  font-size: var(--ds-font-size-body-caption);
-  line-height: var(--ds-line-height-body);
+  font-size: var(--ds-fontSize-body-caption);
+  line-height: var(--ds-lineHeight-body);
 }
 
 .ds-text-mono-md {
   font-family: var(--ds-font-mono);
-  font-size: var(--ds-font-size-mono-md);
-  line-height: var(--ds-line-height-body);
+  font-size: var(--ds-fontSize-mono-md);
+  line-height: var(--ds-lineHeight-body);
 }
 
 .ds-text-mono-sm {
   font-family: var(--ds-font-mono);
-  font-size: var(--ds-font-size-mono-sm);
-  line-height: var(--ds-line-height-body);
+  font-size: var(--ds-fontSize-mono-sm);
+  line-height: var(--ds-lineHeight-body);
 }
 
 .ds-text-mono-xs {
   font-family: var(--ds-font-mono);
-  font-size: var(--ds-font-size-mono-xs);
-  line-height: var(--ds-line-height-body);
+  font-size: var(--ds-fontSize-mono-xs);
+  line-height: var(--ds-lineHeight-body);
 }
 
