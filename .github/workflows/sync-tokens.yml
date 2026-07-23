@@ -2,12 +2,14 @@ name: Sync tokens and publish
 
 on:
   push:
-    branches:
-      - main
-      - token-studio
+    branches: [main]
     paths:
       - 'src/tokens/tokens.json'
   workflow_dispatch:
+
+concurrency:
+  group: token-publish
+  cancel-in-progress: false
 
 jobs:
   rebuild-and-publish:
@@ -15,61 +17,49 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Configure git for commits
+      - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Regenerate colors.ts and variables.css from tokens.json
+      - name: Regenerate token output
         run: npm run build:tokens
 
-      - name: Check if generated token files changed
-        id: diff
+      - name: Validate tokens
+        run: npm run validate:tokens
+
+      - name: Commit regenerated files if changed
         run: |
-          if git diff --quiet src/tokens/colors.ts src/tokens/variables.css src/tokens/typography.css; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+          if ! git diff --quiet src/tokens/colors.ts src/tokens/variables.css src/tokens/typography.css; then
+            git add src/tokens/colors.ts src/tokens/variables.css src/tokens/typography.css
+            git commit -m "chore: regenerate tokens from tokens.json [skip ci]"
+            git push
           fi
 
-      - name: Commit regenerated token files
-        if: steps.diff.outputs.changed == 'true'
-        run: |
-          git add src/tokens/colors.ts src/tokens/variables.css src/tokens/typography.css
-          git commit -m "chore: regenerate tokens from tokens.json [skip ci]"
-          git push
-
-      - name: Bump patch version
-        if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+      - name: Bump version and tag
         run: |
           git checkout -- package-lock.json
           npm version patch -m "chore: release %s [skip ci]"
-
-      - name: Push version bump and tag
-        if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
-        run: git push --follow-tags
-
-      - name: Build package
-        if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
-        run: npm run build
+          git push --follow-tags
 
       - name: Publish to npm
-        if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
-        run: |
-          npm publish --access public \
-            --registry=https://registry.npmjs.org \
-            --@easysimplecool:registry=https://registry.npmjs.org
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Show version to pin in Figma Make
+        run: |
+          V=$(node -p "require('./package.json').version")
+          echo "## 📦 Published @easysimplecool/design-system@$V" >> $GITHUB_STEP_SUMMARY
+          echo "Pin in Figma Make: \`\"@easysimplecool/design-system\": \"$V\"\`" >> $GITHUB_STEP_SUMMARY
