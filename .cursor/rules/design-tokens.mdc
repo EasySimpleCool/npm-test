@@ -9,7 +9,7 @@ Never modify token source files or files generated from them. Tokens flow from F
 
 ## Do not edit
 
-- `src/tokens/tokens.json` — source of truth, synced from Figma/Tokens Studio
+- `src/tokens/*.json` — source of truth, synced from Figma/Tokens Studio (multifile: one JSON per token set + `$metadata.json`)
 - `dist/variables.css` — auto-generated CSS custom properties
 
 These files include an `AUTO-GENERATED` banner. Treat them as read-only.
@@ -21,6 +21,6 @@ These files include an `AUTO-GENERATED` banner. Treat them as read-only.
 
 ## When tokens need to change
 
-1. User updates tokens in Figma and syncs via Tokens Studio → `tokens.json`
+1. User updates tokens in Figma and syncs via Tokens Studio → `src/tokens/*.json`
 2. Run `npm run build:tokens` (or let CI) to regenerate `dist/variables.css`
 3. Consumers reference `var(--ds-*)` from that stylesheet

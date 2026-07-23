@@ -5,7 +5,7 @@ Consumers get **only** `dist/variables.css` — no React, no Style Dictionary.
 
 ## Pipeline
 
-1. Edit tokens in Figma → Tokens Studio **push** → updates `src/tokens/tokens.json`
+1. Edit tokens in Figma → Tokens Studio **push** → updates `src/tokens/*.json`
 2. GitHub Action runs Style Dictionary → commits `dist/variables.css` → publishes to npm
 3. Apps import the CSS and use `var(--ds-…)`
 
@@ -77,9 +77,13 @@ Output: `dist/variables.css`. Consumer apps should not run this.
 
 ```
 npm-test/
-├── src/tokens/tokens.json   # Tokens Studio source of truth
+├── src/tokens/              # Tokens Studio source of truth (multifile)
+│   ├── global.json
+│   ├── button.json
+│   └── $metadata.json
 ├── dist/variables.css       # generated + committed artifact
 ├── style-dictionary.config.js
+├── scripts/load-tokens.mjs
 ├── scripts/validate-tokens.mjs
 └── .github/workflows/sync-tokens.yml
 ```

@@ -1,30 +1,24 @@
-import { readFileSync } from 'fs';
-import { dirname, join } from 'path';
-import { fileURLToPath } from 'url';
+import {
+  findDuplicateSetKeys,
+  loadTokenSets,
+  normalizeTokenSets,
+  RESERVED_KEYS,
+} from './load-tokens.mjs';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const TOKENS_PATH = join(__dirname, '../src/tokens/tokens.json');
-const RESERVED_KEYS = new Set(['$themes', '$metadata']);
-
-const tokens = JSON.parse(readFileSync(TOKENS_PATH, 'utf8'));
+const tokens = normalizeTokenSets(loadTokenSets());
 const actualSets = Object.keys(tokens).filter((key) => !RESERVED_KEYS.has(key));
 const declaredOrder = tokens.$metadata?.tokenSetOrder ?? [];
 
 const ghostSets = declaredOrder.filter((setName) => !actualSets.includes(setName));
 const undeclaredSets = actualSets.filter((setName) => !declaredOrder.includes(setName));
-const duplicateSetKeys = actualSets.filter(
-  (setName) =>
-    tokens[setName] &&
-    typeof tokens[setName] === 'object' &&
-    Object.prototype.hasOwnProperty.call(tokens[setName], setName),
-);
+const duplicateSetKeys = findDuplicateSetKeys(tokens);
 
 let failed = false;
 
 if (ghostSets.length > 0) {
   failed = true;
   console.error(
-    `FAIL: $metadata.tokenSetOrder references sets not in tokens.json: ${ghostSets.join(', ')}`,
+    `FAIL: $metadata.tokenSetOrder references sets not in src/tokens/: ${ghostSets.join(', ')}`,
   );
   console.error('Fix in Tokens Studio: delete the orphan token sets, then push again.');
 }
@@ -51,6 +45,6 @@ if (failed) {
   process.exit(1);
 }
 
-console.log('OK: tokens.json metadata matches token sets.');
+console.log('OK: src/tokens/ metadata matches token sets.');
 console.log(`Sets: ${actualSets.join(', ')}`);
 console.log(`Order: ${declaredOrder.join(' → ')}`);

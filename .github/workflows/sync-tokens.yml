@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'src/tokens/tokens.json'
+      - 'src/tokens/**'
   workflow_dispatch:
 
 concurrency:
@@ -43,7 +43,7 @@ jobs:
         run: |
           if ! git diff --quiet dist/variables.css; then
             git add dist/variables.css
-            git commit -m "chore: regenerate tokens CSS from tokens.json [skip ci]"
+            git commit -m "chore: regenerate tokens CSS from token sets [skip ci]"
             git push
           fi
 
