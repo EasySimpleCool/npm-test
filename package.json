@@ -1,6 +1,6 @@
 {
   "name": "@easysimplecool/design-system",
-  "version": "0.2.42",
+  "version": "0.2.43",
   "description": "Design tokens as CSS custom properties, generated from Tokens Studio.",
   "type": "module",
   "exports": {
