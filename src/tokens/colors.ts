@@ -10,7 +10,7 @@ export const colors = {
   "surface.secondary": "#f7f3ec",
   "surface.tertiary": "#ece5d8",
   "surface.hover": "#f2ecdf",
-  "accent.pink": "#db0081",
+  "accent.pink": "#0005db",
   "accent.pink.deep": "#ad005f",
   "accent.teal": "#2f9b91",
   "accent.teal.deep": "#1c7069",
