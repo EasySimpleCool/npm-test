@@ -49,20 +49,46 @@ Then use tokens in your CSS or inline styles:
 
 ### Figma Make
 
-Pin the package in the Make kit dependencies (use the version from npm after each token publish):
+This package ships **CSS only** — no React components. Figma Make generates UI and styles it with your tokens.
+
+See [Bring your design system package to a Make kit](https://developers.figma.com/docs/code/bring-your-design-system-package/) for kit assembly details.
+
+#### 1. Pin the package
+
+Use the version from npm after each token publish (CI prints this in the workflow summary):
 
 ```json
-"@easysimplecool/design-system": "0.2.46"
+{
+  "dependencies": {
+    "@easysimplecool/design-system": "0.2.46"
+  }
+}
 ```
 
-Import **both** stylesheets (variables first, theme second). This package ships CSS only (no Button/Input components).
+#### 2. Import both stylesheets
 
 ```js
 import "@easysimplecool/design-system/variables.css";
 import "@easysimplecool/design-system/theme.css";
 ```
 
+This package ships CSS only (no Button/Input components).
+
+#### 3. Add guidelines to the Make kit
+
 Copy the Make kit translation guidelines from [`guidelines/`](guidelines/) into the kit (start at `Guidelines.md`). They teach Make how to map `--ds-*` / `--sa-*` and `data-*` theme axes instead of default Tailwind/shadcn styling.
+
+Set axis attributes on `<html>` (e.g. `data-accent="teal"`, `data-canvas="warm"`) — see [Second Act `theme.js`](https://github.com/EasySimpleCool/secondact/blob/main/theme.js) for a reference runtime.
+
+#### 4. Assemble the Make kit
+
+1. In Figma Make → create or edit your Make kit
+2. Add the npm dependency (step 1)
+3. Copy the `guidelines/` contents into kit guidelines, starting at `Guidelines.md` (step 3)
+4. Optionally import your Figma Design library variables (complements the npm CSS)
+5. Publish the kit to your org or set as default for new Make files
+
+After each token publish, update the kit dependency version and refresh guidelines from the new npm release.
 
 ### Static sites / no package manager
 
