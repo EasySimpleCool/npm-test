@@ -52,14 +52,17 @@ Then use tokens in your CSS or inline styles:
 Pin the package in the Make kit dependencies (use the version from npm after each token publish):
 
 ```json
-"@easysimplecool/design-system": "0.2.43"
+"@easysimplecool/design-system": "0.2.46"
 ```
 
-Import the stylesheet the same way — this package ships CSS only (no Button/Input components).
+Import **both** stylesheets (variables first, theme second). This package ships CSS only (no Button/Input components).
 
 ```js
 import "@easysimplecool/design-system/variables.css";
+import "@easysimplecool/design-system/theme.css";
 ```
+
+Copy the Make kit translation guidelines from [`guidelines/`](guidelines/) into the kit (start at `Guidelines.md`). They teach Make how to map `--ds-*` / `--sa-*` and `data-*` theme axes instead of default Tailwind/shadcn styling.
 
 ### Static sites / no package manager
 
@@ -94,6 +97,12 @@ npm-test/
 ├── dist/
 │   ├── variables.css        # Core + Button — generated + committed
 │   └── theme.css            # Multidimensional axis blocks — generated + committed
+├── guidelines/              # Figma Make kit translation guidelines (published — see Guidelines.md for reading order)
+│   ├── Guidelines.md        # start here
+│   ├── setup.md
+│   ├── themes.md
+│   ├── anti-patterns.md
+│   └── foundations/         # color, typography, radius-elevation, buttons
 ├── scripts/
 │   ├── load-tokens.mjs
 │   ├── build-all.mjs

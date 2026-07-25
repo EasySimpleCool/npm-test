@@ -9,7 +9,8 @@
     "./theme.css": "./dist/theme.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "guidelines"
   ],
   "repository": {
     "type": "git",
