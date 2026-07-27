@@ -1,17 +1,10 @@
-import { writeFileSync } from 'fs';
-import { dirname, join } from 'path';
-import { fileURLToPath } from 'url';
 import StyleDictionary from 'style-dictionary';
 import { register } from '@tokens-studio/sd-transforms';
-import { loadTokenSets, normalizeTokenSets, filterForDesignSystemBuild, RESERVED_KEYS } from './scripts/load-tokens.mjs';
+import { loadTokenSets, normalizeTokenSets, filterForDesignSystemBuild } from './scripts/load-tokens.mjs';
 
 register(StyleDictionary, { excludeParentKeys: true });
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const NORMALIZED_PATH = join(__dirname, 'src/tokens/.tokens.normalized.json');
-
 const tokens = normalizeTokenSets(filterForDesignSystemBuild(loadTokenSets()));
-writeFileSync(NORMALIZED_PATH, JSON.stringify(tokens, null, 2));
 
 function parseKey(key) {
   return key.replace(/^\{|\}$/g, '').split('.');
@@ -112,7 +105,7 @@ StyleDictionary.registerFormat({
 });
 
 export default {
-  source: [NORMALIZED_PATH],
+  tokens,
   preprocessors: ['tokens-studio'],
   platforms: {
     css: {

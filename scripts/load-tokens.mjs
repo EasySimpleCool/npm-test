@@ -9,8 +9,6 @@ const SKIP_FILES = new Set([
   '$metadata.json',
   '$themes.json',
   '$figma-collections.json',
-  '.tokens.normalized.json',
-  '.tokens.test.json',
 ]);
 
 export const RESERVED_KEYS = new Set(['$themes', '$metadata', '$figma-collections']);
