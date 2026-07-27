@@ -119,22 +119,23 @@ Output: `dist/variables.css` + `dist/theme.css`. Consumer apps should not run th
 
 ```
 npm-test/
+├── CLAUDE.md                # agent entry point (Claude Code)
+├── .cursor/rules/           # Cursor auto-rules (thin pointer to CLAUDE.md)
 ├── src/tokens/              # Tokens Studio source of truth (multifile + $themes.json)
-├── dist/
-│   ├── variables.css        # Core + Button — generated + committed
-│   └── theme.css            # Multidimensional axis blocks — generated + committed
-├── guidelines/              # Figma Make kit translation guidelines (published — see Guidelines.md for reading order)
-│   ├── Guidelines.md        # start here
-│   ├── setup.md
-│   ├── themes.md
-│   ├── anti-patterns.md
+├── dist/                    # generated + committed CSS (ships to npm)
+│   ├── variables.css        # primitives + component vars
+│   └── theme.css            # multidimensional axis blocks
+├── guidelines/              # CONSUMER docs (shipped in npm — Figma Make kit + apps)
+│   ├── Guidelines.md        # consumer entry point
+│   ├── parametric-theming.md   # the theming model
+│   ├── setup.md, themes.md, anti-patterns.md
 │   └── foundations/         # color, typography, radius-elevation, buttons
-├── scripts/
-│   ├── load-tokens.mjs
-│   ├── build-all.mjs
-│   ├── build-theme.mjs
-│   └── validate-tokens.mjs
-├── test/                    # schema, resolve, golden, build tests
+├── docs/                    # CONTRIBUTOR docs (NOT shipped in npm)
+│   ├── project.md           # pipeline overview + repo tour
+│   ├── scripts.md           # build scripts reference
+│   └── contributing.md      # local workflow, tests, publishing
+├── scripts/                 # build + validation
+├── test/                    # schema, resolve, golden tests
 ├── style-dictionary.config.js
 └── .github/workflows/sync-tokens.yml
 ```

@@ -1,26 +1,22 @@
 ---
-description: Do not hand-edit design tokens or token-generated output
+description: Read CLAUDE.md; do not hand-edit tokens or generated CSS
 alwaysApply: true
 ---
 
-# Design tokens — read-only for the agent
+# Cursor rules — pointer
 
-Never modify token source files or files generated from them. Tokens flow from Figma via Tokens Studio; the build pipeline produces CSS output.
+Primary agent guidance lives in **`CLAUDE.md`** at the repo root. Read it before editing.
 
-## Do not edit
+## Hard rules (do not violate, even for a one-line fix)
 
-- `src/tokens/*.json` — source of truth, synced from Figma/Tokens Studio (multifile: one JSON per token set + `$metadata.json`)
-- `dist/variables.css` — auto-generated CSS custom properties
+- **Never edit `src/tokens/*.json`.** Tokens Studio (Figma plugin) owns those files and will overwrite hand edits on the next push. If a value looks wrong, flag it — don't fix it here.
+- **Never edit `dist/*.css`.** Auto-generated. Regenerate with `npm run build`.
+- **Never `npm publish` locally.** CI handles releases.
 
-These files include an `AUTO-GENERATED` banner. Treat them as read-only.
+## For depth
 
-## Allowed changes
-
-- `style-dictionary.config.js` — build pipeline / output format only
-- Running `npm run build:tokens` to regenerate `dist/variables.css` after the user syncs tokens from Figma
-
-## When tokens need to change
-
-1. User updates tokens in Figma and syncs via Tokens Studio → `src/tokens/*.json`
-2. Run `npm run build:tokens` (or let CI) to regenerate `dist/variables.css`
-3. Consumers reference `var(--ds-*)` from that stylesheet
+- Project overview + pipeline → `docs/project.md`
+- Build scripts → `docs/scripts.md`
+- Local workflow → `docs/contributing.md`
+- Theming model (`--ds-*`, `--sa-*`, `data-*` axes) → `guidelines/parametric-theming.md`
+- Anti-patterns → `guidelines/anti-patterns.md`
