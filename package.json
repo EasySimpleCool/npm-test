@@ -2,6 +2,7 @@
   "name": "@easysimplecool/design-system",
   "version": "0.2.48",
   "description": "Design tokens as CSS custom properties, generated from Tokens Studio.",
+  "license": "MIT",
   "type": "module",
   "exports": {
     ".": "./dist/variables.css",
