@@ -75,20 +75,12 @@ function resolveTokenValue(node, root, stack = new Set()) {
 }
 
 export function mergeThemeSets(tokens, theme) {
-  const order = getTokenSetOrder(tokens);
   const merged = {};
-  const participating = Object.entries(theme.selectedTokenSets ?? {});
 
-  for (const setName of order) {
+  for (const setName of getTokenSetOrder(tokens)) {
     const mode = theme.selectedTokenSets?.[setName];
     if (!mode || !tokens[setName]) continue;
     if (mode === 'source' || mode === 'enabled') {
-      deepMerge(merged, tokens[setName]);
-    }
-  }
-
-  for (const [setName, mode] of participating) {
-    if (!order.includes(setName) && tokens[setName] && (mode === 'source' || mode === 'enabled')) {
       deepMerge(merged, tokens[setName]);
     }
   }

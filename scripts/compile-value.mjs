@@ -57,10 +57,7 @@ function compileDimension(value) {
   return str;
 }
 
-function compileFontFamily(value, cssVar) {
-  if (cssVar === '--sa-font-display' && value === 'Space Grotesk') {
-    return 'var(--ds-fontFamilies-space-grotesk),system-ui,sans-serif';
-  }
+function compileFontFamily(value) {
   return FONT_FALLBACKS[value] ?? `'${value}',sans-serif`;
 }
 
@@ -110,7 +107,7 @@ export function compileTokenValue({ cssVar, token, resolvedValue }, context = {}
   }
 
   if (token.type === 'boxShadow') return compileBoxShadow(resolvedValue);
-  if (token.type === 'fontFamilies') return compileFontFamily(resolvedValue, cssVar);
+  if (token.type === 'fontFamilies') return compileFontFamily(resolvedValue);
   if (token.type === 'fontWeights') return String(resolvedValue);
   if (token.type === 'borderRadius' || token.type === 'dimension') return compileDimension(resolvedValue);
   if (token.type === 'color') return resolvedValue;

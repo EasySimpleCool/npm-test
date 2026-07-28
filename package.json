@@ -2,6 +2,7 @@
   "name": "@easysimplecool/design-system",
   "version": "0.2.48",
   "description": "Design tokens as CSS custom properties, generated from Tokens Studio.",
+  "license": "MIT",
   "type": "module",
   "exports": {
     ".": "./dist/variables.css",
@@ -23,7 +24,7 @@
   "scripts": {
     "build": "npm run build:tokens",
     "build:tokens": "node scripts/build-all.mjs",
-    "test": "node scripts/run-tests.mjs",
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
     "validate:tokens": "node scripts/validate-tokens.mjs",
     "prepublishOnly": "npm run build"
   },

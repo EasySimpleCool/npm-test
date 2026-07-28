@@ -31,13 +31,14 @@ This kit uses **CSS tokens only** from `@easysimplecool/design-system`. There ar
 **MUST READ before writing any code:**
 
 1. This file (`Guidelines.md`)
-2. `setup.md` — CSS imports + theme attributes
-3. `foundations/color.md`
-4. `foundations/typography.md`
-5. `foundations/radius-elevation.md`
-6. `foundations/buttons.md`
-7. `themes.md`
-8. `anti-patterns.md`
+2. `parametric-theming.md` — the mental model behind `--ds-*` / `--sa-*` and `data-*` axes
+3. `setup.md` — CSS imports + theme attributes
+4. `foundations/color.md`
+5. `foundations/typography.md`
+6. `foundations/radius-elevation.md`
+7. `foundations/buttons.md`
+8. `themes.md` — the axis reference sheet
+9. `anti-patterns.md`
 
 ## Hard rules
 
